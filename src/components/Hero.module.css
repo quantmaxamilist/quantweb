@@ -5,10 +5,46 @@
 }
 
 .split {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr minmax(300px, 420px);
   min-height: min(640px, calc(100vh - 64px));
   align-items: stretch;
+}
+
+.chartLine {
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+  animation: drawLine 12s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+}
+
+.chartFill {
+  opacity: 0;
+  animation: fadeFill 4s ease 8s forwards;
+}
+
+.chartDot {
+  opacity: 0;
+  animation: dotAppear 0.5s ease 12s forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeFill {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes dotAppear {
+  to {
+    opacity: 1;
+  }
 }
 
 .left {
