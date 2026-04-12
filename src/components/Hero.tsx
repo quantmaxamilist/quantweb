@@ -28,12 +28,48 @@ export default function Hero() {
           inset: 0,
           width: '100%',
           height: '100%',
-          zIndex: 10,
+          zIndex: 1,
           pointerEvents: 'none',
         }}
+        viewBox="0 0 1200 600"
+        preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <line x1="0" y1="100%" x2="100%" y2="0" stroke="red" strokeWidth="10" opacity="1" />
+        <defs>
+          <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#0071e3" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#0071e3" stopOpacity="0.9" />
+          </linearGradient>
+          <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#0071e3" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#0071e3" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+        <style>{`
+    @keyframes drawChart { to { stroke-dashoffset: 0; } }
+    @keyframes showFill { to { opacity: 1; } }
+    @keyframes showDot { to { opacity: 1; } }
+    #qw-line { stroke-dasharray: 2800; stroke-dashoffset: 2800; animation: drawChart 12s cubic-bezier(0.4,0,0.2,1) 0.5s forwards; }
+    #qw-fill { opacity: 0; animation: showFill 3s ease 9s forwards; }
+    #qw-dot { opacity: 0; animation: showDot 0.5s ease 12s forwards; }
+  `}</style>
+        <line x1="0" y1="150" x2="1200" y2="150" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+        <line x1="0" y1="300" x2="1200" y2="300" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+        <line x1="0" y1="450" x2="1200" y2="450" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
+        <path
+          id="qw-fill"
+          d="M0 580 C100 560,150 575,220 545 C290 515,340 525,410 490 C480 455,530 468,600 425 C670 382,720 398,790 348 C860 298,910 318,980 265 C1050 212,1100 232,1170 178 L1200 165 L1200 600 L0 600Z"
+          fill="url(#fillGrad)"
+        />
+        <path
+          id="qw-line"
+          d="M0 580 C100 560,150 575,220 545 C290 515,340 525,410 490 C480 455,530 468,600 425 C670 382,720 398,790 348 C860 298,910 318,980 265 C1050 212,1100 232,1170 178 L1200 165"
+          fill="none"
+          stroke="url(#lineGrad)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+        <circle id="qw-dot" cx="1200" cy="165" r="4" fill="#0071e3" />
       </svg>
       <div className={styles.split}>
         <div className={styles.left}>
