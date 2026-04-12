@@ -40,13 +40,7 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.colTitle}>Contact</div>
             <ul className={styles.links} role="list">
-              <li><a href="mailto:hello@quantweb.co.uk">hello@quantweb.co.uk</a></li>
-              <li><a href="tel:+44XXXXXXXXXX">+44 XXXX XXXXXX</a></li>
-              <li>
-                <a href="https://linkedin.com/company/quantwebstudio" rel="noopener noreferrer" target="_blank">
-                  LinkedIn
-                </a>
-              </li>
+              <li><a href="mailto:admin@quantweb.co.uk">admin@quantweb.co.uk</a></li>
             </ul>
           </div>
 
