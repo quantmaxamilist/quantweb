@@ -45,31 +45,31 @@ export default function Hero() {
             <stop offset="100%" stopColor="#0071e3" stopOpacity="0" />
           </linearGradient>
           <style>{`
-      @keyframes draw { to { stroke-dashoffset: 0; } }
-      @keyframes fin { to { opacity: 1; } }
-      .cl { stroke-dasharray: 2800; stroke-dashoffset: 2800; animation: draw 12s cubic-bezier(0.4,0,0.2,1) 0.5s forwards; }
-      .cf { opacity: 0; animation: fin 3s ease 9s forwards; }
-      .cd { opacity: 0; animation: fin 0.5s ease 12s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fin { to { opacity: 1; } }
+#chartLine { stroke-dasharray: 2800; stroke-dashoffset: 2800; animation: draw 12s cubic-bezier(0.4,0,0.2,1) 0.5s forwards; }
+#chartFill { opacity: 0; animation: fin 3s ease 9s forwards; }
+#chartDot1, #chartDot2 { opacity: 0; animation: fin 0.5s ease 12s forwards; }
     `}</style>
         </defs>
         <line x1="0" y1="150" x2="1200" y2="150" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
         <line x1="0" y1="300" x2="1200" y2="300" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
         <line x1="0" y1="450" x2="1200" y2="450" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
         <path
-          className="cf"
+          id="chartFill"
           d="M0 560 C100 540,150 560,220 530 C290 500,340 510,410 475 C480 440,530 455,600 410 C670 365,720 385,790 335 C860 285,910 310,980 255 C1050 200,1100 225,1170 165 L1200 150 L1200 600 L0 600Z"
           fill="url(#fg)"
         />
         <path
-          className="cl"
+          id="chartLine"
           d="M0 560 C100 540,150 560,220 530 C290 500,340 510,410 475 C480 440,530 455,600 410 C670 365,720 385,790 335 C860 285,910 310,980 255 C1050 200,1100 225,1170 165 L1200 150"
           fill="none"
           stroke="url(#lg)"
           strokeWidth="2.5"
           strokeLinecap="round"
         />
-        <circle className="cd" cx="1200" cy="150" r="4" fill="#0071e3" />
-        <circle className="cd" cx="1200" cy="150" r="10" fill="none" stroke="#0071e3" strokeWidth="1.5" opacity="0.4">
+        <circle id="chartDot1" cx="1200" cy="150" r="4" fill="#0071e3" />
+        <circle id="chartDot2" cx="1200" cy="150" r="10" fill="none" stroke="#0071e3" strokeWidth="1.5" opacity="0.4">
           <animate attributeName="r" from="6" to="20" dur="2s" repeatCount="indefinite" />
           <animate attributeName="opacity" from="0.4" to="0" dur="2s" repeatCount="indefinite" />
         </circle>
