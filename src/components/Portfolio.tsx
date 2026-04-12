@@ -75,7 +75,7 @@ export default function Portfolio() {
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   priority={index === 0}
-                  style={{ objectFit: 'cover', objectPosition: 'top' }}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>
