@@ -49,57 +49,80 @@
   height: 400px;
   overflow: hidden;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .cardApex {
   background: linear-gradient(160deg, #0d0d0d 0%, #1a1f0a 100%);
 }
 
+.cardApex:hover {
+  background: #0d1a00;
+}
+
 .cardEmber {
   background: #0c0905;
+}
+
+.cardEmber:hover {
+  background: #1a0e00;
 }
 
 .cardHaven {
   background: #0f0e0c;
 }
 
+.cardHaven:hover {
+  background: #f0ece4;
+}
+
 .cardBlade {
   background: #f7f4ef;
 }
 
-.watermark {
+.cardBlade:hover {
+  background: #f7f4ef;
+}
+
+.hoverMark {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(72px, 18vw, 140px);
+  font-size: clamp(120px, 36vw, 220px);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.06em;
+  line-height: 1;
   pointer-events: none;
   user-select: none;
   z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.wmApex {
-  color: rgba(212, 255, 0, 0.06);
+.card:hover .hoverMark {
+  opacity: 1;
 }
 
-.wmEmber {
-  color: rgba(201, 150, 58, 0.07);
+.hoverMarkApex {
+  color: rgba(212, 255, 0, 0.14);
 }
 
-.wmHaven {
-  color: rgba(139, 111, 78, 0.08);
+.hoverMarkEmber {
+  color: rgba(201, 150, 58, 0.16);
 }
 
-.wmBlade {
-  color: rgba(26, 26, 26, 0.04);
+.hoverMarkHaven {
+  color: rgba(139, 111, 78, 0.12);
 }
 
-.wmCta {
-  color: rgba(255, 255, 255, 0.03);
-  font-size: clamp(56px, 12vw, 100px);
+.hoverMarkBlade {
+  color: rgba(26, 26, 26, 0.06);
+}
+
+.cardBlade:hover .hoverMarkBlade {
+  color: rgba(26, 26, 26, 0.1);
 }
 
 .default {
@@ -110,11 +133,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: opacity 0.35s ease;
-}
-
-.card:hover .default {
-  opacity: 0;
 }
 
 .tag {
@@ -124,9 +142,14 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 
 .tagApex {
+  color: #d4ff00;
+}
+
+.cardApex:hover .tagApex {
   color: #d4ff00;
 }
 
@@ -134,7 +157,15 @@
   color: #c9963a;
 }
 
+.cardEmber:hover .tagEmber {
+  color: #c9963a;
+}
+
 .tagHaven {
+  color: #8b6f4e;
+}
+
+.cardHaven:hover .tagHaven {
   color: #8b6f4e;
 }
 
@@ -145,12 +176,18 @@
   border-radius: 4px;
 }
 
+.cardBlade:hover .tagBlade {
+  color: #1a1a1a;
+  background: rgba(26, 26, 26, 0.08);
+}
+
 .cardTitle {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.1;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
 .titleLight {
@@ -161,11 +198,17 @@
   color: #1a1a1a;
 }
 
+.cardHaven:hover .titleLight {
+  color: #1a1a1a;
+}
+
 .cardDesc {
   font-size: 13px;
   font-weight: 300;
   line-height: 1.55;
   max-width: 340px;
+  margin: 0;
+  transition: opacity 0.3s ease;
 }
 
 .descLight {
@@ -174,6 +217,68 @@
 
 .descDark {
   color: rgba(26, 26, 26, 0.55);
+}
+
+.cardHaven:hover .descLight {
+  color: rgba(26, 26, 26, 0.55);
+}
+
+.copySwitcher {
+  position: relative;
+  min-height: 56px;
+}
+
+.pills {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pills span {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid;
+}
+
+.pillsApex span {
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(212, 255, 0, 0.35);
+  background: rgba(212, 255, 0, 0.06);
+}
+
+.pillsEmber span {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(201, 150, 58, 0.4);
+  background: rgba(201, 150, 58, 0.08);
+}
+
+.pillsHaven span {
+  color: #1a1a1a;
+  border-color: rgba(26, 26, 26, 0.12);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.pillsBlade span {
+  color: #1a1a1a;
+  border-color: rgba(26, 26, 26, 0.12);
+  background: rgba(26, 26, 26, 0.04);
+}
+
+.card:hover .cardDesc {
+  opacity: 0;
+}
+
+.card:hover .pills {
+  opacity: 1;
 }
 
 .arrow {
@@ -189,7 +294,7 @@
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.6);
-  transition: border-color 0.25s, color 0.25s, background 0.25s;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
 }
 
 .cardBlade .arrow {
@@ -203,318 +308,24 @@
   background: rgba(0, 113, 227, 0.08);
 }
 
-.preview {
+.watermark {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  overflow: hidden;
-}
-
-.card:hover .preview {
-  opacity: 1;
-}
-
-/* ── Apex preview ── */
-.apexRoot {
-  width: 100%;
-  color: #fff;
-  font-family: var(--font, inherit);
-}
-
-.apexNav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  border-bottom: 1px solid rgba(212, 255, 0, 0.12);
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-.apexNavHint {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.35);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-}
-
-.apexLogoDot {
-  color: #d4ff00;
-}
-
-.apexHero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  padding: 28px 20px;
-  align-items: start;
-}
-
-.apexHeadline {
-  font-size: 34px;
-  font-weight: 800;
-  line-height: 1.05;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-}
-
-.apexHeadline span {
-  color: #d4ff00;
-}
-
-.apexStats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.apexStat {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(212, 255, 0, 0.15);
-  border-radius: 8px;
-  padding: 14px 12px;
-}
-
-.apexStatNum {
-  font-size: 22px;
-  font-weight: 800;
-  color: #d4ff00;
-  margin-bottom: 4px;
-}
-
-.apexStatLabel {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.45);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-/* ── Ember preview ── */
-.emberRoot {
-  width: 100%;
-  color: #fff;
-  font-family: Georgia, 'Times New Roman', serif;
-}
-
-.emberNav {
-  padding: 14px 20px;
-  border-bottom: 1px solid rgba(201, 150, 58, 0.2);
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #c9963a;
-}
-
-.emberHero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
-  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
 }
 
-.emberH1 {
-  font-size: 38px;
-  font-weight: 300;
-  line-height: 1.15;
-  margin-bottom: 12px;
+.wmCta {
+  color: rgba(255, 255, 255, 0.03);
+  font-size: clamp(56px, 12vw, 100px);
 }
 
-.emberH1 span {
-  color: #c9963a;
-  font-weight: 400;
-}
-
-.emberSub {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.4);
-  margin-bottom: 20px;
-  font-family: var(--font, inherit);
-}
-
-.emberCta {
-  font-family: var(--font, inherit);
-  background: transparent;
-  color: #c9963a;
-  border: 1px solid #c9963a;
-  padding: 10px 22px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.emberDishes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  width: 100%;
-  max-width: 620px;
-  padding: 0 12px 16px;
-  font-family: var(--font, inherit);
-}
-
-.emberDish {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 150, 58, 0.15);
-  border-radius: 8px;
-  padding: 10px;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.emberPrice {
-  color: #c9963a;
-  font-weight: 600;
-  margin-top: 4px;
-}
-
-/* ── Haven preview ── */
-.havenRoot {
-  width: 100%;
-  color: #1a1a1a;
-}
-
-.havenNav {
-  padding: 14px 20px;
-  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.havenHero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding: 20px;
-  align-items: start;
-}
-
-.havenH1 {
-  font-size: 32px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.15;
-}
-
-.havenH1 span {
-  color: #8b6f4e;
-}
-
-.havenGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.havenPh {
-  aspect-ratio: 1;
-  border-radius: 8px;
-  display: flex;
-  align-items: flex-end;
-  padding: 8px;
-  font-size: 10px;
-  font-weight: 600;
-  color: rgba(26, 26, 26, 0.75);
-}
-
-.havenPh1 {
-  background: linear-gradient(135deg, #d4c4b0, #a8947c);
-}
-
-.havenPh2 {
-  background: linear-gradient(135deg, #c9b8a4, #8b7a66);
-}
-
-.havenPh3 {
-  background: linear-gradient(135deg, #e0d5c8, #9a8b78);
-}
-
-.havenPh4 {
-  background: linear-gradient(135deg, #b5a08c, #7d6c5a);
-}
-
-/* ── Blade preview ── */
-.bladeRoot {
-  width: 100%;
-  color: #1a1a1a;
-}
-
-.bladeNav {
-  padding: 12px 18px;
-  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.bladeLeft {
-  flex: 1;
-  min-height: 0;
-  padding: 20px 18px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.bladeH1 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 32px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.15;
-}
-
-.bladeRight {
-  color: #fff;
-  padding: 18px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-}
-
-.bladeRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  font-size: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 8px;
-}
-
-.bladeRow:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.bladeSvc {
-  font-style: italic;
-  color: #fff;
-}
-
-.bladePrice {
-  color: rgba(255, 255, 255, 0.45);
-  white-space: nowrap;
-}
-
-.bladeQuote {
-  margin-top: auto;
-  padding: 10px 18px 14px;
-  font-size: 11px;
-  font-style: italic;
-  color: rgba(26, 26, 26, 0.55);
-  border-top: 1px solid rgba(26, 26, 26, 0.08);
-}
-
-/* ── CTA row ── */
 .ctaCard {
   grid-column: 1 / -1;
   position: relative;
@@ -522,7 +333,7 @@
   overflow: hidden;
   cursor: default;
   background: #0a0a0a;
-  transition: background 0.25s ease;
+  transition: background 0.3s ease;
 }
 
 .ctaCard:hover {
