@@ -111,7 +111,6 @@ function HeroChartCanvas() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    console.log('canvas size:', canvas.clientWidth, canvas.clientHeight)
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
@@ -192,26 +191,15 @@ function HeroChartCanvas() {
       ctx.restore()
     }
 
-    const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      const w = canvas.clientWidth
-      const h = canvas.clientHeight
-      canvas.width = Math.max(1, Math.floor(w * dpr))
-      canvas.height = Math.max(1, Math.floor(h * dpr))
-      const elapsed = startRef.current == null ? 0 : performance.now() - startRef.current
-      const progress = Math.min(1, elapsed / DURATION_MS)
-      drawFrame(w, h, progress)
-    }
-
-    const ro = new ResizeObserver(() => resize())
-    ro.observe(canvas)
-    resize()
+    canvas.width = canvas.offsetWidth || window.innerWidth
+    canvas.height = canvas.offsetHeight || 600
+    const w = canvas.width
+    const h = canvas.height
 
     const tick = (now: number) => {
       if (startRef.current === null) startRef.current = now
       const progress = Math.min(1, (now - startRef.current) / DURATION_MS)
-      const w = canvas.clientWidth
-      const h = canvas.clientHeight
+      console.log('drawing frame, progress:', progress)
       drawFrame(w, h, progress)
       if (progress < 1) {
         rafRef.current = requestAnimationFrame(tick)
@@ -222,7 +210,6 @@ function HeroChartCanvas() {
 
     return () => {
       cancelAnimationFrame(rafRef.current)
-      ro.disconnect()
       startRef.current = null
     }
   }, [])
