@@ -5,7 +5,7 @@ import styles from './Faq.module.css'
 const faqs = [
   {
     q: 'How much does a website cost in South Wales?',
-    a: 'A professional business website in South Wales typically costs between £350 and £8,000 depending on complexity, number of pages, and integrations. At QuantWeb, we offer transparent, project-based pricing starting from £350 for a clean, fast, fully SEO-optimised site. We\'ll give you a detailed quote after a free consultation — no hidden costs.',
+    a: 'A professional business website in South Wales typically costs between £500 and £8,000 depending on complexity, number of pages, and integrations. At QuantWeb, we offer transparent, project-based pricing starting from £350 for a clean, fast, fully SEO-optimised site. We\'ll give you a detailed quote after a free consultation — no hidden costs.',
   },
   {
     q: 'How long does SEO take to work in the UK?',
