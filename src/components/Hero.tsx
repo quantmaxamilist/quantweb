@@ -243,7 +243,7 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      <div className={styles.chartBackdrop}>
+      <div className={styles.chartBackdrop} style={{ background: 'red' }}>
         <HeroChartCanvas />
       </div>
       <div className={styles.split}>
