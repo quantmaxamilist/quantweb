@@ -16,7 +16,10 @@ export default function Hero() {
   }
 
   return (
-    <section className={styles.hero} aria-labelledby="hero-heading">
+    <section
+      style={{ position: 'relative', background: '#0a0a0a', overflow: 'hidden' }}
+      aria-labelledby="hero-heading"
+    >
       <div
         style={{
           position: 'absolute',
