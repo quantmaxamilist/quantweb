@@ -28,12 +28,12 @@ export default function Hero() {
           inset: 0,
           width: '100%',
           height: '100%',
-          zIndex: 1,
+          zIndex: 10,
           pointerEvents: 'none',
         }}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <line x1="0" y1="100%" x2="100%" y2="0" stroke="#0071e3" strokeWidth="3" opacity="0.6" />
+        <line x1="0" y1="100%" x2="100%" y2="0" stroke="red" strokeWidth="10" opacity="1" />
       </svg>
       <div className={styles.split}>
         <div className={styles.left}>
