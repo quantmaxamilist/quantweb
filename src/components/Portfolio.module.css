@@ -216,23 +216,9 @@
   opacity: 1;
 }
 
-.previewScale {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  transform: scale(0.5);
-  transform-origin: 0 0;
-  overflow: hidden;
-}
-
 /* ── Apex preview ── */
 .apexRoot {
   width: 100%;
-  height: 100%;
-  min-height: 800px;
-  background: #0d0d0d;
   color: #fff;
   font-family: var(--font, inherit);
 }
@@ -309,12 +295,7 @@
 /* ── Ember preview ── */
 .emberRoot {
   width: 100%;
-  height: 100%;
-  min-height: 800px;
-  background: #0c0905;
   color: #fff;
-  display: flex;
-  flex-direction: column;
   font-family: Georgia, 'Times New Roman', serif;
 }
 
@@ -329,7 +310,6 @@
 }
 
 .emberHero {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -397,9 +377,6 @@
 /* ── Haven preview ── */
 .havenRoot {
   width: 100%;
-  height: 100%;
-  min-height: 800px;
-  background: #f5f4f0;
   color: #1a1a1a;
 }
 
@@ -466,11 +443,6 @@
 /* ── Blade preview ── */
 .bladeRoot {
   width: 100%;
-  height: 100%;
-  min-height: 800px;
-  background: #f7f4ef;
-  display: flex;
-  flex-direction: column;
   color: #1a1a1a;
 }
 
@@ -484,7 +456,6 @@
 }
 
 .bladeHero {
-  flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 0;

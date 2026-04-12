@@ -1,5 +1,15 @@
 import Link from 'next/link'
+import type { CSSProperties } from 'react'
 import styles from './Portfolio.module.css'
+
+function previewInnerStyle(bg: string): CSSProperties {
+  return {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: bg,
+  }
+}
 
 function ArrowIcon() {
   return (
@@ -43,8 +53,18 @@ export default function Portfolio() {
             </p>
           </div>
           <div className={styles.preview}>
-            <div className={styles.previewScale}>
-              <div className={styles.apexRoot}>
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '200%',
+                height: '200%',
+                transform: 'scale(0.5)',
+                transformOrigin: '0 0',
+              }}
+            >
+              <div className={styles.apexRoot} style={previewInnerStyle('#0d0d0d')}>
                 <nav className={styles.apexNav}>
                   <span>
                     APEX<span className={styles.apexLogoDot}>.</span>
@@ -76,6 +96,10 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
+                <div
+                  style={{ flex: 1, minHeight: 0, backgroundColor: '#0d0d0d' }}
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>
@@ -95,8 +119,18 @@ export default function Portfolio() {
             </p>
           </div>
           <div className={styles.preview}>
-            <div className={styles.previewScale}>
-              <div className={styles.emberRoot}>
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '200%',
+                height: '200%',
+                transform: 'scale(0.5)',
+                transformOrigin: '0 0',
+              }}
+            >
+              <div className={styles.emberRoot} style={previewInnerStyle('#0c0905')}>
                 <nav className={styles.emberNav}>EMBER</nav>
                 <div className={styles.emberHero}>
                   <h4 className={styles.emberH1}>
@@ -119,6 +153,10 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
+                <div
+                  style={{ flex: 1, minHeight: 0, backgroundColor: '#0c0905' }}
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>
@@ -138,8 +176,18 @@ export default function Portfolio() {
             </p>
           </div>
           <div className={styles.preview}>
-            <div className={styles.previewScale}>
-              <div className={styles.havenRoot}>
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '200%',
+                height: '200%',
+                transform: 'scale(0.5)',
+                transformOrigin: '0 0',
+              }}
+            >
+              <div className={styles.havenRoot} style={previewInnerStyle('#f5f4f0')}>
                 <nav className={styles.havenNav}>Haven Property</nav>
                 <div className={styles.havenHero}>
                   <div>
@@ -154,6 +202,10 @@ export default function Portfolio() {
                     <div className={`${styles.havenPh} ${styles.havenPh4}`}>Pontcanna</div>
                   </div>
                 </div>
+                <div
+                  style={{ flex: 1, minHeight: 0, backgroundColor: '#f5f4f0' }}
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>
@@ -173,8 +225,18 @@ export default function Portfolio() {
             </p>
           </div>
           <div className={styles.preview}>
-            <div className={styles.previewScale}>
-              <div className={styles.bladeRoot}>
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '200%',
+                height: '200%',
+                transform: 'scale(0.5)',
+                transformOrigin: '0 0',
+              }}
+            >
+              <div className={styles.bladeRoot} style={previewInnerStyle('#f7f4ef')}>
                 <nav className={styles.bladeNav}>Blade &amp; Co.</nav>
                 <div className={styles.bladeHero}>
                   <div className={styles.bladeLeft}>
@@ -201,6 +263,18 @@ export default function Portfolio() {
                 </div>
                 <div className={styles.bladeQuote}>
                   &ldquo;A great haircut isn&apos;t a luxury. It&apos;s a statement.&rdquo;
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flex: 1,
+                    minHeight: 0,
+                    width: '100%',
+                  }}
+                  aria-hidden="true"
+                >
+                  <div style={{ flex: 1, backgroundColor: '#f7f4ef' }} />
+                  <div style={{ flex: 1, backgroundColor: '#1a1a1a' }} />
                 </div>
               </div>
             </div>
