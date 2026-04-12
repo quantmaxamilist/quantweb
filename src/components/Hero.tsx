@@ -111,6 +111,7 @@ function HeroChartCanvas() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+    console.log('canvas size:', canvas.clientWidth, canvas.clientHeight)
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
@@ -250,7 +251,8 @@ export default function Hero() {
 
   return (
     <section
-      style={{ position: 'relative', background: '#0a0a0a', overflow: 'hidden' }}
+      className={styles.hero}
+      style={{ overflow: 'hidden' }}
       aria-labelledby="hero-heading"
     >
       <div className={styles.chartBackdrop} style={{ zIndex: 2 }}>

@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   background: #0a0a0a;
+  min-height: 600px;
 }
 
 .chartBackdrop {
