@@ -17,7 +17,7 @@ export default function Hero() {
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+      <div className={styles.chartBackdrop}>
         <svg
           width="100%"
           height="100%"

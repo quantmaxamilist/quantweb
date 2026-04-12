@@ -1,7 +1,13 @@
 .hero {
   position: relative;
-  overflow: hidden;
   background: #0a0a0a;
+}
+
+.chartBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .split {
