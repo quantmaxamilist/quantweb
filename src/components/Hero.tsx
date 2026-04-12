@@ -20,7 +20,7 @@ export default function Hero() {
       <div className={styles.split}>
         <div className={styles.left}>
           <h1 className={styles.headline} id="hero-heading">
-            Websites that
+            We build websites that
             <br />
             <span className={styles.accentLine}>actually perform.</span>
           </h1>
