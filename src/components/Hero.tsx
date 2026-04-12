@@ -28,7 +28,7 @@ export default function Hero() {
           right: 0,
           bottom: 0,
           background: 'red',
-          zIndex: 0,
+          zIndex: 999,
           pointerEvents: 'none',
         }}
       />
