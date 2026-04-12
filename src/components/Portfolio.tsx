@@ -2,13 +2,36 @@ import Link from 'next/link'
 import type { CSSProperties } from 'react'
 import styles from './Portfolio.module.css'
 
-function previewInnerStyle(bg: string): CSSProperties {
+function solidPreviewRoot(bg: string): CSSProperties {
   return {
-    height: '100%',
+    width: '100%',
+    minHeight: '800px',
+    backgroundColor: bg,
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: bg,
   }
+}
+
+const bladeGridRoot: CSSProperties = {
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  width: '100%',
+  minHeight: '800px',
+}
+
+const bladeColLeft: CSSProperties = {
+  backgroundColor: '#f7f4ef',
+  minHeight: '800px',
+  display: 'flex',
+  flexDirection: 'column',
+}
+
+const bladeColRight: CSSProperties = {
+  backgroundColor: '#1a1a1a',
+  minHeight: '800px',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
 }
 
 function ArrowIcon() {
@@ -64,7 +87,7 @@ export default function Portfolio() {
                 transformOrigin: '0 0',
               }}
             >
-              <div className={styles.apexRoot} style={previewInnerStyle('#0d0d0d')}>
+              <div className={styles.apexRoot} style={solidPreviewRoot('#0d0d0d')}>
                 <nav className={styles.apexNav}>
                   <span>
                     APEX<span className={styles.apexLogoDot}>.</span>
@@ -96,10 +119,6 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
-                <div
-                  style={{ flex: 1, minHeight: 0, backgroundColor: '#0d0d0d' }}
-                  aria-hidden="true"
-                />
               </div>
             </div>
           </div>
@@ -130,7 +149,7 @@ export default function Portfolio() {
                 transformOrigin: '0 0',
               }}
             >
-              <div className={styles.emberRoot} style={previewInnerStyle('#0c0905')}>
+              <div className={styles.emberRoot} style={solidPreviewRoot('#0c0905')}>
                 <nav className={styles.emberNav}>EMBER</nav>
                 <div className={styles.emberHero}>
                   <h4 className={styles.emberH1}>
@@ -153,10 +172,6 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
-                <div
-                  style={{ flex: 1, minHeight: 0, backgroundColor: '#0c0905' }}
-                  aria-hidden="true"
-                />
               </div>
             </div>
           </div>
@@ -187,7 +202,7 @@ export default function Portfolio() {
                 transformOrigin: '0 0',
               }}
             >
-              <div className={styles.havenRoot} style={previewInnerStyle('#f5f4f0')}>
+              <div className={styles.havenRoot} style={solidPreviewRoot('#f5f4f0')}>
                 <nav className={styles.havenNav}>Haven Property</nav>
                 <div className={styles.havenHero}>
                   <div>
@@ -202,10 +217,6 @@ export default function Portfolio() {
                     <div className={`${styles.havenPh} ${styles.havenPh4}`}>Pontcanna</div>
                   </div>
                 </div>
-                <div
-                  style={{ flex: 1, minHeight: 0, backgroundColor: '#f5f4f0' }}
-                  aria-hidden="true"
-                />
               </div>
             </div>
           </div>
@@ -236,12 +247,17 @@ export default function Portfolio() {
                 transformOrigin: '0 0',
               }}
             >
-              <div className={styles.bladeRoot} style={previewInnerStyle('#f7f4ef')}>
-                <nav className={styles.bladeNav}>Blade &amp; Co.</nav>
-                <div className={styles.bladeHero}>
+              <div className={styles.bladeRoot} style={bladeGridRoot}>
+                <div style={bladeColLeft}>
+                  <nav className={styles.bladeNav}>Blade &amp; Co.</nav>
                   <div className={styles.bladeLeft}>
                     <h4 className={styles.bladeH1}>The art of the perfect cut.</h4>
                   </div>
+                  <div className={styles.bladeQuote}>
+                    &ldquo;A great haircut isn&apos;t a luxury. It&apos;s a statement.&rdquo;
+                  </div>
+                </div>
+                <div style={bladeColRight}>
                   <div className={styles.bladeRight}>
                     <div className={styles.bladeRow}>
                       <span className={styles.bladeSvc}>The Classic Cut</span>
@@ -260,21 +276,6 @@ export default function Portfolio() {
                       <span className={styles.bladePrice}>£55</span>
                     </div>
                   </div>
-                </div>
-                <div className={styles.bladeQuote}>
-                  &ldquo;A great haircut isn&apos;t a luxury. It&apos;s a statement.&rdquo;
-                </div>
-                <div
-                  style={{
-                    display: 'flex',
-                    flex: 1,
-                    minHeight: 0,
-                    width: '100%',
-                  }}
-                  aria-hidden="true"
-                >
-                  <div style={{ flex: 1, backgroundColor: '#f7f4ef' }} />
-                  <div style={{ flex: 1, backgroundColor: '#1a1a1a' }} />
                 </div>
               </div>
             </div>
