@@ -2,22 +2,14 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
-  animation: navDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes navDown {
-  from { opacity: 0; transform: translateY(-16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .nav {
   max-width: 1080px;
   margin: 0 auto;
-  height: 52px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,21 +17,10 @@
 }
 
 .logo {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.4px;
-  color: var(--black);
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.logoDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
+  color: inherit;
 }
 
 .links {
@@ -50,20 +31,20 @@
 
 .links a {
   font-size: 14px;
-  color: var(--gray-3);
+  color: rgba(255, 255, 255, 0.45);
   text-decoration: none;
   font-weight: 400;
   transition: color 0.2s;
 }
 
-.links a:hover { color: var(--black); }
+.links a:hover { color: #ffffff; }
 
 .cta {
   font-size: 14px;
   font-weight: 500;
   color: #fff;
-  background: var(--accent);
-  padding: 8px 18px;
+  background: #0071e3;
+  padding: 10px 20px;
   border-radius: 980px;
   text-decoration: none;
   transition: background 0.2s, transform 0.15s;
@@ -77,7 +58,7 @@
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--black);
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -89,13 +70,12 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 52px;
+    top: 64px;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(20px);
+    background: #111111;
     padding: 16px 24px 24px;
-    border-bottom: 0.5px solid var(--gray-2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     gap: 16px;
   }
 }

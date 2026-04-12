@@ -34,7 +34,6 @@ export default function Cta() {
 
   return (
     <section className={styles.section} id="contact" aria-labelledby="contact-heading">
-      <div className={styles.grid} aria-hidden="true" />
       <div className={styles.content}>
         <p className={styles.eyebrow}>Get started</p>
         <h2 className={styles.title} id="contact-heading">

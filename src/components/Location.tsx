@@ -20,10 +20,10 @@ export default function Location() {
 
         <div className={`${styles.mapBox} reveal d1`} role="img" aria-label="South Wales service area map placeholder">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <circle cx="20" cy="18" r="8" stroke="#0071e3" strokeWidth="2"/>
-            <circle cx="20" cy="18" r="3" fill="#0071e3"/>
-            <path d="M20 26c0 0-10 8-10 14" stroke="#e8e8ed" strokeWidth="1.5" strokeLinecap="round"/>
-            <path d="M20 26c0 0 10 8 10 14" stroke="#e8e8ed" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="20" cy="18" r="8" stroke="#0071e3" strokeWidth="2" />
+            <circle cx="20" cy="18" r="3" fill="#0071e3" />
+            <path d="M20 26c0 0-10 8-10 14" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M20 26c0 0 10 8 10 14" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
           <span>South Wales &amp; UK</span>
           {/* TODO: Replace with a real Google Maps iframe */}

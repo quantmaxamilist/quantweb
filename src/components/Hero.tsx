@@ -1,100 +1,107 @@
 'use client'
-import { useEffect, useRef } from 'react'
-import Link from 'next/link'
+
+import { useState } from 'react'
 import styles from './Hero.module.css'
 
 export default function Hero() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [name, setName] = useState('')
+  const [company, setCompany] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [sent, setSent] = useState(false)
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    let animId: number
-    const pts: { x: number; y: number; vx: number; vy: number; r: number }[] = []
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth
-      canvas.height = canvas.offsetHeight
-    }
-    resize()
-    window.addEventListener('resize', resize)
-
-    for (let i = 0; i < 44; i++) {
-      pts.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.28,
-        vy: (Math.random() - 0.5) * 0.28,
-        r: Math.random() * 1.6 + 0.4,
-      })
-    }
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      pts.forEach(p => {
-        p.x += p.vx; p.y += p.vy
-        if (p.x < 0) p.x = canvas.width
-        if (p.x > canvas.width) p.x = 0
-        if (p.y < 0) p.y = canvas.height
-        if (p.y > canvas.height) p.y = 0
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(0,113,227,0.22)'
-        ctx.fill()
-      })
-      for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-          const dx = pts[i].x - pts[j].x
-          const dy = pts[i].y - pts[j].y
-          const d = Math.sqrt(dx * dx + dy * dy)
-          if (d < 150) {
-            ctx.beginPath()
-            ctx.moveTo(pts[i].x, pts[i].y)
-            ctx.lineTo(pts[j].x, pts[j].y)
-            ctx.strokeStyle = `rgba(0,113,227,${0.07 * (1 - d / 150)})`
-            ctx.lineWidth = 0.6
-            ctx.stroke()
-          }
-        }
-      }
-      animId = requestAnimationFrame(draw)
-    }
-    draw()
-
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setSent(true)
+  }
 
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
-      <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />
-      <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.split}>
+        <div className={styles.left}>
+          <h1 className={styles.headline} id="hero-heading">
+            Websites that
+            <br />
+            <span className={styles.accentLine}>actually perform.</span>
+          </h1>
+          <p className={styles.sub}>
+            QuantWeb builds beautiful, high-performance websites and drives the organic
+            traffic to fill them — for businesses across South Wales and the UK.
+          </p>
+          <div className={styles.trustPills} aria-label="Highlights">
+            <span>No monthly retainers</span>
+            <span className={styles.trustDot} aria-hidden="true">
+              ·
+            </span>
+            <span>Pay per project</span>
+            <span className={styles.trustDot} aria-hidden="true">
+              ·
+            </span>
+            <span>Free consultation</span>
+          </div>
+        </div>
 
-      <p className={styles.eyebrow}>
-        <span className={styles.eyebrowDot} aria-hidden="true" />
-        Web Studio · South Wales
-      </p>
-
-      <h1 className={styles.headline} id="hero-heading">
-        Websites that<br />
-        <span className={styles.accentWord}>work harder.</span>
-      </h1>
-
-      <p className={styles.sub}>
-        QuantWeb builds beautiful, high-performance websites and drives the organic
-        traffic to fill them — for businesses across South Wales and the UK.
-      </p>
-
-      <div className={styles.actions}>
-        <Link href="#contact" className={styles.btnPrimary}>Start a project</Link>
-        <Link href="#services" className={styles.btnGhost}>
-          See our services <span aria-hidden="true">›</span>
-        </Link>
+        <div className={styles.panel}>
+          <h2 className={styles.formTitle}>Let&apos;s build something great</h2>
+          {!sent ? (
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <div className={styles.field}>
+                <label htmlFor="hero-name">Full name</label>
+                <input
+                  id="hero-name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="hero-company">Company</label>
+                <input
+                  id="hero-company"
+                  name="company"
+                  type="text"
+                  autoComplete="organization"
+                  value={company}
+                  onChange={e => setCompany(e.target.value)}
+                />
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="hero-email">Email</label>
+                <input
+                  id="hero-email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="hero-message">Message</label>
+                <textarea
+                  id="hero-message"
+                  name="message"
+                  rows={4}
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit" className={styles.submit}>
+                Send message
+              </button>
+            </form>
+          ) : (
+            <p className={styles.thanks} role="status">
+              Thanks — we&apos;ll be in touch soon.
+            </p>
+          )}
+          <p className={styles.formNote}>We reply within one business day</p>
+        </div>
       </div>
     </section>
   )

@@ -1,30 +1,28 @@
 import styles from './Stats.module.css'
 
+const items = [
+  { title: 'No monthly retainers', sub: 'Pay per job, no lock-in' },
+  { title: 'South Wales based', sub: 'Serving the whole UK' },
+  { title: '98+ Lighthouse score', sub: 'On every single build' },
+]
+
 export default function Stats() {
   return (
     <section className={styles.stats} aria-label="Why choose us">
       <div className={styles.grid}>
-        <div className={styles.item}>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-            <circle cx="9" cy="9" r="9" fill="#0071e3"/>
-            <path d="M5 9l3 3 5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span>No monthly retainers — pay per job</span>
-        </div>
-        <div className={styles.item}>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-            <circle cx="9" cy="9" r="9" fill="#0071e3"/>
-            <path d="M5 9l3 3 5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span>South Wales based, UK wide</span>
-        </div>
-        <div className={styles.item}>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-            <circle cx="9" cy="9" r="9" fill="#0071e3"/>
-            <path d="M5 9l3 3 5-5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <span>98+ Lighthouse score on every build</span>
-        </div>
+        {items.map(({ title, sub }) => (
+          <div key={title} className={styles.item}>
+            <div className={styles.iconSquare} aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M3 7l2.5 2.5L11 4" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div className={styles.textCol}>
+              <div className={styles.title}>{title}</div>
+              <div className={styles.sub}>{sub}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
