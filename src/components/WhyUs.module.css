@@ -1,0 +1,22 @@
+.section { background: var(--gray-1); padding: 100px 24px; border-top: 0.5px solid var(--gray-2); }
+.inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.6px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+.title { font-size: clamp(30px, 4vw, 44px); font-weight: 700; letter-spacing: -1px; line-height: 1.1; color: var(--black); margin-bottom: 16px; }
+.sub { font-size: 16px; font-weight: 300; color: var(--gray-3); line-height: 1.7; margin-bottom: 32px; }
+.points { display: flex; flex-direction: column; }
+.point { display: flex; gap: 14px; padding: 18px 0; border-bottom: 0.5px solid var(--gray-2); transition: padding-left 0.2s; }
+.point:first-child { padding-top: 0; }
+.point:hover { padding-left: 6px; }
+.num { font-size: 13px; font-weight: 600; color: var(--accent); min-width: 20px; padding-top: 2px; }
+.ptTitle { font-size: 15px; font-weight: 600; color: var(--black); margin-bottom: 4px; }
+.ptDesc { font-size: 14px; font-weight: 300; color: var(--gray-3); line-height: 1.65; }
+.card { background: var(--white); border: 0.5px solid var(--gray-2); border-radius: 18px; padding: 28px; }
+.cardLabel { font-size: 11px; font-weight: 500; letter-spacing: 0.5px; color: var(--gray-3); text-transform: uppercase; margin-bottom: 20px; }
+.row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 0.5px solid var(--gray-2); }
+.row:last-child { border-bottom: none; }
+.pos { width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.kw { font-size: 13px; color: var(--black); flex: 1; }
+.barWrap { width: 54px; height: 3px; background: var(--gray-2); border-radius: 2px; overflow: hidden; }
+.bar { height: 100%; background: var(--accent); border-radius: 2px; transition: width 1.4s cubic-bezier(0.16,1,0.3,1); }
+.trend { font-size: 11px; color: #34c759; font-weight: 500; width: 36px; text-align: right; }
+@media (max-width: 768px) { .inner { grid-template-columns: 1fr; gap: 40px; } }

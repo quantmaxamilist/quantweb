@@ -1,0 +1,76 @@
+# Quant Web Studio — Cursor Rules
+
+## Project overview
+Next.js 14 App Router website for Quant Web Studio, a South Wales web design and SEO agency.
+Apple-style design: clean, light, minimal. Accent colour #0071e3.
+
+## Stack
+- Next.js 14 (App Router)
+- TypeScript
+- CSS Modules (no Tailwind, no styled-components)
+- DM Sans font (via next/font/google)
+- No external UI libraries
+
+## File structure
+src/
+  app/
+    layout.tsx      — root layout, metadata, JSON-LD schema, fonts
+    page.tsx        — homepage (imports all section components)
+    globals.css     — design tokens (CSS variables), animations, utilities
+    sitemap.ts      — auto-generated sitemap
+    robots.ts       — auto-generated robots.txt
+  components/
+    Nav.tsx / Nav.module.css
+    Ticker.tsx / Ticker.module.css
+    Hero.tsx / Hero.module.css         (canvas particle animation)
+    Stats.tsx / Stats.module.css       (count-up on scroll)
+    Services.tsx / Services.module.css
+    WhyUs.tsx / WhyUs.module.css       (rank bar animations)
+    Location.tsx / Location.module.css
+    Faq.tsx / Faq.module.css           (accordion)
+    Cta.tsx / Cta.module.css           (contact form)
+    Footer.tsx / Footer.module.css
+    RevealProvider.tsx                  (scroll reveal IntersectionObserver)
+    useReveal.ts
+
+## Design tokens (from globals.css)
+--white: #ffffff
+--black: #1d1d1f
+--gray-1: #f5f5f7   (light backgrounds)
+--gray-2: #e8e8ed   (borders, dividers)
+--gray-3: #6e6e73   (secondary text)
+--gray-4: #86868b   (tertiary text)
+--accent: #0071e3   (Apple blue — primary CTA colour)
+--accent-dark: #0058b0
+
+## Coding conventions
+- Always use CSS Modules for component styles (ComponentName.module.css)
+- Client components need 'use client' directive at top
+- Server components by default (no directive needed)
+- Use Next.js <Link> for internal links, <Image> for images
+- All animations via CSS (no animation libraries)
+- Scroll reveals use the .reveal CSS class + IntersectionObserver in RevealProvider
+- Accessibility: aria-labels on interactive elements, semantic HTML, sr-only labels
+
+## SEO rules
+- Every new page needs: title, description, openGraph, twitter metadata via Next.js Metadata API
+- JSON-LD schema lives in src/app/layout.tsx — update @graph array for new services/pages
+- Add new URLs to src/app/sitemap.ts when creating new pages
+- Images: always use next/image with descriptive alt text
+- Target keywords: "web design south wales", "SEO agency wales", "web studio cardiff"
+
+## When adding new pages
+1. Create src/app/[slug]/page.tsx
+2. Add metadata export with title, description, openGraph
+3. Add URL to sitemap.ts
+4. Add JSON-LD schema if it's a service page
+
+## Contact form
+Cta.tsx has a handleSubmit function with a TODO comment.
+Replace with Formspree endpoint: POST to https://formspree.io/f/YOUR_FORM_ID
+Or use a Next.js API route at src/app/api/contact/route.ts
+
+## Deployment
+Target: Vercel (free tier)
+Domain: quantweb.co.uk
+Run: npm run build — should produce zero errors before deploying
