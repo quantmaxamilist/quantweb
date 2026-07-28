@@ -54,6 +54,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.quantweb.co.uk',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', sizes: '512x512', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   other: {
     'geo.region': 'GB-WLS',
     'geo.placename': 'South Wales',
@@ -68,7 +76,7 @@ const jsonLd = {
       '@id': 'https://www.quantweb.co.uk/#business',
       name: 'QuantWeb Studio',
       url: 'https://www.quantweb.co.uk',
-      logo: 'https://www.quantweb.co.uk/logo.png',
+      logo: 'https://www.quantweb.co.uk/favicon.svg',
       image: 'https://www.quantweb.co.uk/og-image.jpg',
       description:
         'QuantWeb Studio is a web design and SEO agency based in South Wales, building high-performance websites and delivering organic growth for businesses across the UK.',
