@@ -1,7 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { submitToWeb3Forms } from '@/lib/web3forms'
 import styles from './Hero.module.css'
+
+const SUBMIT_ERROR =
+  'Something went wrong — please email admin@quantweb.co.uk directly'
 
 export default function Hero() {
   const [name, setName] = useState('')
@@ -9,10 +13,29 @@ export default function Hero() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setSubmitError('')
+
+    setSubmitting(true)
+    const ok = await submitToWeb3Forms({
+      subject: `New enquiry from QuantWeb site — ${name}`,
+      name,
+      company,
+      email,
+      message,
+    })
+    setSubmitting(false)
+
+    if (ok) {
+      setSent(true)
+      return
+    }
+
+    setSubmitError(SUBMIT_ERROR)
   }
 
   return (
@@ -109,6 +132,7 @@ export default function Hero() {
                   value={name}
                   onChange={e => setName(e.target.value)}
                   required
+                  disabled={submitting}
                 />
               </div>
               <div className={styles.field}>
@@ -120,6 +144,7 @@ export default function Hero() {
                   autoComplete="organization"
                   value={company}
                   onChange={e => setCompany(e.target.value)}
+                  disabled={submitting}
                 />
               </div>
               <div className={styles.field}>
@@ -132,6 +157,7 @@ export default function Hero() {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   required
+                  disabled={submitting}
                 />
               </div>
               <div className={styles.field}>
@@ -143,10 +169,16 @@ export default function Hero() {
                   value={message}
                   onChange={e => setMessage(e.target.value)}
                   required
+                  disabled={submitting}
                 />
               </div>
-              <button type="submit" className={styles.submit}>
-                Send message
+              {submitError && (
+                <p className={styles.submitError} role="alert">
+                  {submitError}
+                </p>
+              )}
+              <button type="submit" className={styles.submit} disabled={submitting}>
+                {submitting ? 'Sending…' : 'Send message'}
               </button>
             </form>
           ) : (

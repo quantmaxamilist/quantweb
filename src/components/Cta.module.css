@@ -99,3 +99,16 @@
   color: rgba(255, 255, 255, 0.85);
   margin-top: 12px;
 }
+
+.submitError {
+  font-size: 14px;
+  color: rgba(255, 220, 220, 0.95);
+  line-height: 1.45;
+  margin: 14px auto 0;
+  max-width: 440px;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}

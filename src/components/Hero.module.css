@@ -153,6 +153,18 @@
   line-height: 1.5;
 }
 
+.submitError {
+  font-size: 13px;
+  color: #ff8a8a;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 @media (max-width: 960px) {
   .split {
     grid-template-columns: 1fr;

@@ -1,35 +1,41 @@
 'use client'
 import { useState } from 'react'
+import { submitToWeb3Forms } from '@/lib/web3forms'
 import styles from './Cta.module.css'
+
+const SUBMIT_ERROR =
+  'Something went wrong — please email admin@quantweb.co.uk directly'
 
 export default function Cta() {
   const [email, setEmail] = useState('')
   const [sent, setSent] = useState(false)
-  const [error, setError] = useState(false)
+  const [validationError, setValidationError] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const handleSubmit = async () => {
     if (!email || !email.includes('@') || !email.includes('.')) {
-      setError(true)
-      setTimeout(() => setError(false), 1600)
+      setValidationError(true)
+      setTimeout(() => setValidationError(false), 1600)
       return
     }
 
-    // TODO: Replace with your form endpoint
-    // Option A — Formspree: POST to https://formspree.io/f/YOUR_ID
-    // Option B — Netlify Forms: add data-netlify="true" to the form
-    // Option C — your own API route at /api/contact
+    setSubmitError('')
 
-    // Example Formspree integration:
-    // const res = await fetch('https://formspree.io/f/YOUR_ID', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email }),
-    // })
-    // if (res.ok) { setSent(true); setEmail('') }
+    setSubmitting(true)
+    const ok = await submitToWeb3Forms({
+      subject: `New enquiry from QuantWeb site — ${email}`,
+      email,
+    })
+    setSubmitting(false)
 
-    // For now, simulate success:
-    setSent(true)
-    setEmail('')
+    if (ok) {
+      setSent(true)
+      setEmail('')
+      return
+    }
+
+    setSubmitError(SUBMIT_ERROR)
   }
 
   return (
@@ -44,23 +50,36 @@ export default function Cta() {
         </p>
 
         {!sent ? (
-          <div className={styles.form} role="form" aria-label="Contact form">
-            <label htmlFor="cta-email" className="sr-only">Your email address</label>
-            <input
-              id="cta-email"
-              className={`${styles.input} ${error ? styles.inputError : ''}`}
-              type="email"
-              placeholder="your@email.com"
-              autoComplete="email"
-              aria-required="true"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              onKeyDown={e => e.key === 'Enter' && handleSubmit()}
-            />
-            <button className={styles.btn} onClick={handleSubmit} type="button">
-              Get in touch
-            </button>
-          </div>
+          <>
+            <div className={styles.form} role="form" aria-label="Contact form">
+              <label htmlFor="cta-email" className="sr-only">Your email address</label>
+              <input
+                id="cta-email"
+                className={`${styles.input} ${validationError ? styles.inputError : ''}`}
+                type="email"
+                placeholder="your@email.com"
+                autoComplete="email"
+                aria-required="true"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && !submitting && handleSubmit()}
+                disabled={submitting}
+              />
+              <button
+                className={styles.btn}
+                onClick={handleSubmit}
+                type="button"
+                disabled={submitting}
+              >
+                {submitting ? 'Sending…' : 'Get in touch'}
+              </button>
+            </div>
+            {submitError && (
+              <p className={styles.submitError} role="alert">
+                {submitError}
+              </p>
+            )}
+          </>
         ) : (
           <p className={styles.thanks} role="status" aria-live="polite">
             Thanks — we&apos;ll be in touch soon. ✓
