@@ -1,12 +1,20 @@
 import type { Metadata } from 'next'
-import { DM_Sans } from 'next/font/google'
+import { Fraunces, Hanken_Grotesk } from 'next/font/google'
 import './globals.css'
 import RevealProvider from '@/components/RevealProvider'
 
-const dmSans = DM_Sans({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-dm-sans',
+  weight: ['500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-body',
   display: 'swap',
 })
 
@@ -156,10 +164,8 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={dmSans.variable}>
+    <html lang="en-GB" className={`${fraunces.variable} ${hankenGrotesk.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

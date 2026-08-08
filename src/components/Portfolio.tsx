@@ -2,20 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Portfolio.module.css'
 
-function ArrowIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <path
-        d="M5 9h8M10 5l4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
 const cards = [
   {
     src: '/apex.png',
@@ -56,8 +42,9 @@ export default function Portfolio() {
     <section className={styles.section} id="portfolio" aria-labelledby="portfolio-heading">
       <div className={styles.head}>
         <p className={styles.eyebrow}>What we build</p>
+        <span className="eyebrowRule" aria-hidden="true" />
         <h2 className={styles.title} id="portfolio-heading">
-          Work that speaks for itself.
+          Work that speaks for <span className="accentItalic">itself.</span>
         </h2>
         <p className={styles.sub}>
           Every site we build is fast, beautiful, and built to rank.
@@ -67,21 +54,22 @@ export default function Portfolio() {
       <div className={styles.grid}>
         {cards.map((card, index) => (
           <article key={card.src} className={styles.card}>
-            <div className={styles.imageHoverWrap}>
-              <div className={styles.imageCover}>
+            <div className={styles.frame}>
+              <div className={styles.frameBar} aria-hidden="true">
+                <span className={styles.frameDot} />
+                <span className={styles.frameDot} />
+                <span className={styles.frameDot} />
+              </div>
+              <div className={styles.preview}>
                 <Image
                   src={card.src}
                   alt={card.alt}
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   priority={index === 0}
-                  style={{ objectFit: 'cover' }}
+                  className={styles.previewImage}
                 />
               </div>
-            </div>
-            <div className={styles.gradient} aria-hidden="true" />
-            <div className={styles.arrow} aria-hidden="true">
-              <ArrowIcon />
             </div>
             <div className={styles.info}>
               <span className={`${styles.tag} ${card.tagClass}`}>{card.tag}</span>
@@ -98,7 +86,9 @@ export default function Portfolio() {
           <div className={styles.ctaInner}>
             <div className={styles.ctaText}>
               <p className={styles.ctaTag}>Your business</p>
-              <h3 className={styles.ctaTitle}>Your site could be next.</h3>
+              <h3 className={styles.ctaTitle}>
+                Your site could be <span className="accentItalic">next.</span>
+              </h3>
               <p className={styles.ctaDesc}>
                 Share your goals and timeline — we&apos;ll reply with a clear plan and quote.
               </p>

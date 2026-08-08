@@ -29,7 +29,10 @@ export default function Services() {
     <section className={styles.section} id="services" aria-labelledby="services-heading">
       <div className={`${styles.head} reveal`}>
         <p className={styles.eyebrow}>What we do</p>
-        <h2 className={styles.title} id="services-heading">Design. Build. Rank.</h2>
+        <span className="eyebrowRule eyebrowRuleCenter" aria-hidden="true" />
+        <h2 className={styles.title} id="services-heading">
+          Design. Build. <span className="accentItalic">Rank.</span>
+        </h2>
         <p className={styles.sub}>Two disciplines, one studio — we build your site and make sure the world finds it.</p>
       </div>
 

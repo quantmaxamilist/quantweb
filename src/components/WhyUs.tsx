@@ -40,7 +40,11 @@ export default function WhyUs() {
       <div className={styles.inner}>
         <div className="reveal">
           <p className={styles.eyebrow}>Why QuantWeb</p>
-          <h2 className={styles.title} id="why-heading">Rank higher.<br />Stay there.</h2>
+          <span className="eyebrowRule" aria-hidden="true" />
+          <h2 className={styles.title} id="why-heading">
+            Rank higher.<br />
+            <span className="accentItalic">Stay there.</span>
+          </h2>
           <p className={styles.sub}>Most agencies do design or SEO. We do both — built to work together from day one.</p>
           <div className={styles.points} role="list">
             {points.map(p => (

@@ -8,7 +8,11 @@ export default function Location() {
       <div className={styles.inner}>
         <div className="reveal">
           <p className={styles.eyebrow}>Where we work</p>
-          <h2 className={styles.title} id="location-heading">Based in South Wales.<br />Built for the UK.</h2>
+          <span className="eyebrowRule" aria-hidden="true" />
+          <h2 className={styles.title} id="location-heading">
+            Based in South Wales.<br />
+            Built for <span className="accentItalic">the UK.</span>
+          </h2>
           <p className={styles.sub}>
             We&apos;re a South Wales web studio working with businesses across Cardiff, Swansea, Newport, Bridgend, and beyond.
             All projects run remotely with clear, consistent communication.

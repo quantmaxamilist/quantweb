@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap');
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +14,6 @@
   --accent: #0071e3;
   --accent-dark: #0058b0;
   --success: #34c759;
-  --font: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 
   /* legacy aliases (dark theme) */
   --white: #ffffff;
@@ -33,12 +30,35 @@ html {
 }
 
 body {
-  font-family: var(--font);
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), Georgia, 'Times New Roman', serif;
+  letter-spacing: -0.02em;
+}
+
+.accentItalic {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.eyebrowRule {
+  display: block;
+  width: 120px;
+  height: 1px;
+  margin: 12px 0 0;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.eyebrowRuleCenter {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skip-link {

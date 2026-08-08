@@ -42,8 +42,10 @@ export default function Cta() {
     <section className={styles.section} id="contact" aria-labelledby="contact-heading">
       <div className={styles.content}>
         <p className={styles.eyebrow}>Get started</p>
+        <span className="eyebrowRule eyebrowRuleCenter" aria-hidden="true" />
         <h2 className={styles.title} id="contact-heading">
-          Ready to build<br />something great?
+          Ready to build<br />
+          <span className="accentItalic">something great?</span>
         </h2>
         <p className={styles.sub}>
           Drop us your email and we&apos;ll be in touch within one business day.

@@ -37,7 +37,10 @@ export default function Faq() {
       <div className={styles.inner}>
         <div className={`${styles.head} reveal`}>
           <p className={styles.eyebrow}>FAQ</p>
-          <h2 className={styles.title} id="faq-heading">Common questions</h2>
+          <span className="eyebrowRule eyebrowRuleCenter" aria-hidden="true" />
+          <h2 className={styles.title} id="faq-heading">
+            Common <span className="accentItalic">questions</span>
+          </h2>
           <p className={styles.sub}>Everything you need to know before working with us.</p>
         </div>
 
