@@ -3,6 +3,7 @@ import Ticker from '@/components/Ticker'
 import Hero from '@/components/Hero'
 import Stats from '@/components/Stats'
 import Services from '@/components/Services'
+import OurWork from '@/components/OurWork'
 import Portfolio from '@/components/Portfolio'
 import WhyUs from '@/components/WhyUs'
 import Location from '@/components/Location'
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <Services />
+        <OurWork />
         <Portfolio />
         <WhyUs />
         <Location />

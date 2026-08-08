@@ -15,6 +15,7 @@ export default function Nav() {
         </Link>
 
         <ul className={`${styles.links} ${open ? styles.open : ''}`} role="list">
+          <li><Link href="#our-work" onClick={() => setOpen(false)}>Our work</Link></li>
           <li><Link href="#services" onClick={() => setOpen(false)}>Services</Link></li>
           <li><Link href="#why-us" onClick={() => setOpen(false)}>Why us</Link></li>
           <li><Link href="#location" onClick={() => setOpen(false)}>Location</Link></li>

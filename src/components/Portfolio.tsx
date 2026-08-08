@@ -20,14 +20,6 @@ const cards = [
     desc: 'Dark luxury editorial design. Reservation-focused conversion flow.',
   },
   {
-    src: '/haven.png',
-    alt: 'Haven Property website screenshot',
-    tag: 'Luxury property',
-    tagClass: styles.tagHaven,
-    title: 'Haven Property',
-    desc: 'Light luxury estate agency. Premium listings, valuation-focused.',
-  },
-  {
     src: '/blade.png',
     alt: 'Blade & Co. website screenshot',
     tag: 'Grooming & barbershop',
