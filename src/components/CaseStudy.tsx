@@ -23,55 +23,68 @@ function TickIcon() {
   )
 }
 
-type CaseStudyProps = {
-  data: CaseStudyData
+export type CaseStudyProps = Pick<
+  CaseStudyData,
+  | 'title'
+  | 'accentWord'
+  | 'subtitle'
+  | 'desktopImg'
+  | 'mobileImg'
+  | 'url'
+  | 'domain'
+  | 'challenge'
+  | 'solution'
+  | 'services'
+> & {
+  id: string
 }
 
-export default function CaseStudy({ data }: CaseStudyProps) {
-  const {
-    domain,
-    desktopImage,
-    mobileImage,
-    clientName,
-    accentWord,
-    subtitle,
-    challenge,
-    solution,
-    services,
-    websiteUrl,
-  } = data
+export default function CaseStudy({
+  id,
+  title,
+  accentWord,
+  subtitle,
+  desktopImg,
+  mobileImg,
+  url,
+  domain,
+  challenge,
+  solution,
+  services,
+}: CaseStudyProps) {
+  const displayTitle = accentWord ? `${title} ${accentWord}` : title
 
   return (
-    <article className={styles.caseStudy} aria-labelledby={`case-${data.id}-heading`}>
-      <div className={styles.browser}>
-        <div className={styles.browserBar} aria-hidden="true">
-          <div className={styles.trafficLights}>
-            <span className={styles.dotRed} />
-            <span className={styles.dotAmber} />
-            <span className={styles.dotGreen} />
+    <article className={styles.caseStudy} aria-labelledby={`${id}-heading`}>
+      <div className={styles.mediaRow}>
+        <div className={styles.browser}>
+          <div className={styles.browserBar} aria-hidden="true">
+            <div className={styles.trafficLights}>
+              <span className={styles.dotRed} />
+              <span className={styles.dotAmber} />
+              <span className={styles.dotGreen} />
+            </div>
+            <div className={styles.urlPill}>{domain}</div>
+            <div className={styles.browserSpacer} />
           </div>
-          <div className={styles.urlPill}>{domain}</div>
-          <div className={styles.browserSpacer} />
+          <div className={styles.desktopPreview}>
+            <Image
+              src={desktopImg}
+              alt={`${displayTitle} website desktop screenshot`}
+              fill
+              sizes="(max-width: 768px) 100vw, 800px"
+              className={styles.desktopImage}
+              priority
+            />
+          </div>
         </div>
-        <div className={styles.desktopPreview}>
-          <Image
-            src={desktopImage}
-            alt={`${clientName} website desktop view`}
-            fill
-            sizes="(max-width: 768px) 100vw, 1120px"
-            className={styles.desktopImage}
-            priority
-          />
-        </div>
-      </div>
 
-      <div className={styles.detailRow}>
         <div className={styles.phoneCol}>
           <div className={styles.phoneFrame}>
             <div className={styles.phoneScreen}>
               <Image
-                src={mobileImage}
-                alt={`${clientName} website mobile view`}
+                src={mobileImg}
+                alt={`${displayTitle} website mobile screenshot`}
                 fill
                 sizes="240px"
                 className={styles.mobileImage}
@@ -80,53 +93,51 @@ export default function CaseStudy({ data }: CaseStudyProps) {
           </div>
           <span className={styles.mobileLabel}>MOBILE VIEW</span>
         </div>
+      </div>
 
-        <div className={styles.textCol}>
-          <div>
-            <h3 className={styles.clientName} id={`case-${data.id}-heading`}>
-              {accentWord ? (
-                <>
-                  {clientName}{' '}
-                  <span className="accentItalic">{accentWord}</span>
-                </>
-              ) : (
-                clientName
-              )}
-            </h3>
-            <p className={styles.subtitle}>{subtitle}</p>
-          </div>
+      <div className={styles.textCol}>
+        <h2 className={styles.clientName} id={`${id}-heading`}>
+          {accentWord ? (
+            <>
+              {title}{' '}
+              <span className="accentItalic">{accentWord}</span>
+            </>
+          ) : (
+            title
+          )}
+        </h2>
+        <p className={styles.subtitle}>{subtitle}</p>
 
-          <div className={styles.block}>
-            <span className={styles.blockLabel}>The Challenge</span>
-            <p className={styles.blockText}>{challenge}</p>
-          </div>
-
-          <div className={styles.block}>
-            <span className={styles.blockLabel}>The Solution</span>
-            <p className={styles.blockText}>{solution}</p>
-          </div>
-
-          <div className={styles.servicesBlock}>
-            <span className={styles.blockLabel}>Services Delivered</span>
-            <ul className={styles.chips} role="list">
-              {services.map(service => (
-                <li key={service} className={styles.chip}>
-                  <TickIcon />
-                  {service}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <a
-            href={websiteUrl}
-            className={styles.visitBtn}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit Website <span aria-hidden="true">→</span>
-          </a>
+        <div className={styles.block}>
+          <span className={styles.blockLabel}>The Challenge</span>
+          <p className={styles.blockText}>{challenge}</p>
         </div>
+
+        <div className={styles.block}>
+          <span className={styles.blockLabel}>The Solution</span>
+          <p className={styles.blockText}>{solution}</p>
+        </div>
+
+        <div className={styles.servicesBlock}>
+          <span className={styles.blockLabel}>Services Delivered</span>
+          <ul className={styles.chips} role="list">
+            {services.map(service => (
+              <li key={service} className={styles.chip}>
+                <TickIcon />
+                {service}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <a
+          href={url}
+          className={styles.visitBtn}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Website <span aria-hidden="true">→</span>
+        </a>
       </div>
     </article>
   )

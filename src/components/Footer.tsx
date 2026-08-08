@@ -30,7 +30,7 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.colTitle}>Company</div>
             <ul className={styles.links} role="list">
-              <li><Link href="#our-work">Our Work</Link></li>
+              <li><Link href="/work">Our Work</Link></li>
               <li><Link href="#why-us">Why QuantWeb</Link></li>
               <li><Link href="#location">Location</Link></li>
               <li><Link href="#faq">FAQ</Link></li>

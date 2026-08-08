@@ -1,7 +1,14 @@
 .caseStudy {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 48px;
+}
+
+.mediaRow {
+  display: grid;
+  grid-template-columns: 1fr minmax(200px, 260px);
+  gap: 32px;
+  align-items: start;
 }
 
 /* Mac-style browser frame */
@@ -13,6 +20,7 @@
     0 24px 48px rgba(0, 0, 0, 0.45),
     0 0 0 1px rgba(255, 255, 255, 0.04);
   background: #141414;
+  min-width: 0;
 }
 
 .browserBar {
@@ -83,19 +91,12 @@
   object-position: top center;
 }
 
-/* Bottom row: phone + text */
-.detailRow {
-  display: grid;
-  grid-template-columns: minmax(200px, 280px) 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
 .phoneCol {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .phoneFrame {
@@ -137,6 +138,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 760px;
 }
 
 .clientName {
@@ -145,7 +147,7 @@
   letter-spacing: -0.02em;
   line-height: 1.05;
   color: #fff;
-  margin: 0;
+  margin: 0 0 12px;
 }
 
 .subtitle {
@@ -153,7 +155,7 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.45);
   line-height: 1.5;
-  margin: -12px 0 0;
+  margin: 0 0 8px;
 }
 
 .block {
@@ -237,9 +239,9 @@
     gap: 32px;
   }
 
-  .detailRow {
+  .mediaRow {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
   }
 
   .phoneCol {
