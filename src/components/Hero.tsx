@@ -44,6 +44,18 @@ export default function Hero() {
       style={{ overflow: 'hidden' }}
       aria-labelledby="hero-heading"
     >
+      <video
+        className={styles.bgVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        poster="/hero-poster.jpg"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+      <div className={styles.bgOverlay} aria-hidden="true" />
       <svg
         aria-hidden="true"
         style={{

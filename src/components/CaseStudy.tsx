@@ -30,6 +30,8 @@ export type CaseStudyProps = Pick<
   | 'subtitle'
   | 'desktopImg'
   | 'mobileImg'
+  | 'gradient'
+  | 'mono'
   | 'url'
   | 'domain'
   | 'challenge'
@@ -46,6 +48,8 @@ export default function CaseStudy({
   subtitle,
   desktopImg,
   mobileImg,
+  gradient,
+  mono,
   url,
   domain,
   challenge,
@@ -68,27 +72,47 @@ export default function CaseStudy({
             <div className={styles.browserSpacer} />
           </div>
           <div className={styles.desktopPreview}>
-            <Image
-              src={desktopImg}
-              alt={`${displayTitle} website desktop screenshot`}
-              fill
-              sizes="(max-width: 768px) 100vw, 800px"
-              className={styles.desktopImage}
-              priority
-            />
+            {desktopImg ? (
+              <Image
+                src={desktopImg}
+                alt={`${displayTitle} website desktop screenshot`}
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className={styles.desktopImage}
+                priority
+              />
+            ) : (
+              <div
+                className={styles.panelFill}
+                style={{ background: gradient }}
+                aria-hidden="true"
+              >
+                <span className={styles.panelMono}>{mono}</span>
+              </div>
+            )}
           </div>
         </div>
 
         <div className={styles.phoneCol}>
           <div className={styles.phoneFrame}>
             <div className={styles.phoneScreen}>
-              <Image
-                src={mobileImg}
-                alt={`${displayTitle} website mobile screenshot`}
-                fill
-                sizes="240px"
-                className={styles.mobileImage}
-              />
+              {mobileImg ? (
+                <Image
+                  src={mobileImg}
+                  alt={`${displayTitle} website mobile screenshot`}
+                  fill
+                  sizes="240px"
+                  className={styles.mobileImage}
+                />
+              ) : (
+                <div
+                  className={styles.panelFill}
+                  style={{ background: gradient }}
+                  aria-hidden="true"
+                >
+                  <span className={styles.panelMonoSm}>{mono}</span>
+                </div>
+              )}
             </div>
           </div>
           <span className={styles.mobileLabel}>MOBILE VIEW</span>

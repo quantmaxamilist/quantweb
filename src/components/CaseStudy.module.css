@@ -91,6 +91,49 @@
   object-position: top center;
 }
 
+/* Branded panel fallback (until a real screenshot is dropped in) */
+.panelFill {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.panelFill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.35));
+}
+
+.panelMono {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(34px, 6vw, 60px);
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  text-align: center;
+  white-space: pre-line;
+  color: #fff;
+  opacity: 0.96;
+  padding: 0 20px;
+}
+
+.panelMonoSm {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.05;
+  text-align: center;
+  white-space: pre-line;
+  color: #fff;
+  padding: 0 10px;
+}
+
 .phoneCol {
   display: flex;
   flex-direction: column;

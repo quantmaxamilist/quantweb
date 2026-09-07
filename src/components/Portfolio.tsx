@@ -1,122 +1,130 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Portfolio.module.css'
 
-type DemoCard = {
-  kind: 'demo'
-  src: string
-  alt: string
-  tag: string
-  tagClass: string
-  title: string
-  desc: string
-}
-
-type ClientCard = {
-  kind: 'client'
-  href: string
-  src: string
-  alt: string
+type Card = {
+  href?: string
   domain: string
+  gradient: string
+  mono: string
   tag: string
   tagClass: string
   title: string
   desc: string
+  live?: boolean
 }
 
-type PortfolioCard = DemoCard | ClientCard
-
-const cards: PortfolioCard[] = [
+const cards: Card[] = [
   {
-    kind: 'demo',
-    src: '/apex.png',
-    alt: 'Apex Fitness website screenshot',
-    tag: 'Fitness & wellness',
-    tagClass: styles.tagApex,
-    title: 'Apex Fitness',
-    desc: 'High-energy dark gym site. Membership-first conversion flow.',
+    href: 'https://getintokeepingandfootball.co.uk',
+    domain: 'getintokeepingandfootball.co.uk',
+    gradient: 'linear-gradient(135deg, #0a0a0a, #262626)',
+    mono: 'GIKF',
+    tag: 'Coaching · North West',
+    tagClass: styles.tagAccent,
+    title: 'Get Into Keeping & Football',
+    desc: 'Cinematic video hero, membership plans and a live social feed for a fast-growing coaching academy.',
+    live: true,
   },
   {
-    kind: 'demo',
-    src: '/ember.png',
-    alt: 'Ember Restaurant website screenshot',
-    tag: 'Hospitality & dining',
-    tagClass: styles.tagEmber,
-    title: 'Ember Restaurant',
-    desc: 'Dark luxury editorial design. Reservation-focused conversion flow.',
+    href: 'https://rs1.uk',
+    domain: 'rs1.uk',
+    gradient: 'linear-gradient(135deg, #0a0a0a, #3a2e0a)',
+    mono: 'RS1',
+    tag: 'Investment & Advisory · London',
+    tagClass: styles.tagGold,
+    title: 'RS1 Capital',
+    desc: 'A refined black-and-gold, multi-page site for a specialist investment and turnaround firm.',
+    live: true,
   },
   {
-    kind: 'demo',
-    src: '/blade.png',
-    alt: 'Blade & Co. website screenshot',
-    tag: 'Grooming & barbershop',
-    tagClass: styles.tagBlade,
-    title: 'Blade & Co.',
-    desc: 'Editorial cream and black luxury barber. Serif typography, heritage feel.',
+    href: 'https://scarlatt.co.uk',
+    domain: 'scarlatt.co.uk',
+    gradient: 'linear-gradient(135deg, #160607, #3a0d10)',
+    mono: 'Scarlatt',
+    tag: 'Renovations · Cheshire',
+    tagClass: styles.tagRed,
+    title: 'Scarlatt Property Development',
+    desc: 'Editorial build with per-project case pages, mobile carousels and Cheshire-targeted local SEO.',
+    live: true,
   },
   {
-    kind: 'client',
-    href: '/work',
-    src: '/work/jaggerz-desktop.jpg',
-    alt: 'Jaggerz Takeaway website screenshot',
-    domain: 'jaggerztakeaway.co.uk',
-    tag: 'Web Design · Local SEO · Mobile',
-    tagClass: styles.tagJaggerz,
-    title: 'Jaggerz Takeaway',
-    desc: 'Fresh food & coffee takeaway in Narberth — real menu, live hours and click-to-call.',
+    href: 'https://boxed-fresh.vercel.app',
+    domain: 'boxed-fresh.vercel.app',
+    gradient: 'linear-gradient(135deg, #0c1f12, #123a1f)',
+    mono: 'Boxed\nFresh',
+    tag: 'Meal Prep · West Yorkshire',
+    tagClass: styles.tagGreen,
+    title: 'The Boxed Fresh Meals Co.',
+    desc: 'Interactive menu with real macro data, studio food photography and a clean ordering flow.',
+    live: true,
+  },
+  {
+    href: 'https://ecoheatashp.co.uk',
+    domain: 'ecoheatashp.co.uk',
+    gradient: 'linear-gradient(135deg, #07231a, #0c4a34)',
+    mono: 'EcoHeat',
+    tag: 'Renewable Heating · Lancashire',
+    tagClass: styles.tagGreen,
+    title: 'EcoHeat ASHP',
+    desc: 'Modern rebuild with service pages, an accreditations bar and an Our Work gallery for an MCS installer.',
+    live: true,
+  },
+  {
+    href: 'https://voyagercamperconversions.com',
+    domain: 'voyagercamperconversions.com',
+    gradient: 'linear-gradient(135deg, #0f1a1c, #1c3b40)',
+    mono: 'Voyager',
+    tag: 'Camper Conversions · UK',
+    tagClass: styles.tagAccent,
+    title: 'Voyager Camper Conversions',
+    desc: 'A rugged, gallery-led site for a bespoke campervan and motorhome conversion and hire business.',
+    live: true,
   },
 ]
 
-function FrameBar({ domain }: { domain?: string }) {
-  if (domain) {
-    return (
-      <div className={styles.frameBarUrl} aria-hidden="true">
-        <div className={styles.trafficLights}>
-          <span className={styles.dotRed} />
-          <span className={styles.dotAmber} />
-          <span className={styles.dotGreen} />
-        </div>
-        <div className={styles.urlPill}>{domain}</div>
-        <div className={styles.frameBarSpacer} />
-      </div>
-    )
-  }
-
+function FrameBar({ domain }: { domain: string }) {
   return (
-    <div className={styles.frameBar} aria-hidden="true">
-      <span className={styles.frameDot} />
-      <span className={styles.frameDot} />
-      <span className={styles.frameDot} />
+    <div className={styles.frameBarUrl} aria-hidden="true">
+      <div className={styles.trafficLights}>
+        <span className={styles.dotRed} />
+        <span className={styles.dotAmber} />
+        <span className={styles.dotGreen} />
+      </div>
+      <div className={styles.urlPill}>{domain}</div>
+      <div className={styles.frameBarSpacer} />
     </div>
   )
 }
 
-function PortfolioCardContent({
-  card,
-  index,
-}: {
-  card: PortfolioCard
-  index: number
-}) {
+function CardContent({ card }: { card: Card }) {
   return (
     <>
       <div className={styles.frame}>
-        <FrameBar domain={card.kind === 'client' ? card.domain : undefined} />
+        <FrameBar domain={card.domain} />
         <div className={styles.preview}>
-          <Image
-            src={card.src}
-            alt={card.alt}
-            fill
-            sizes="(max-width: 900px) 100vw, 50vw"
-            priority={index === 0}
-            className={styles.previewImage}
-          />
+          <div
+            className={styles.panelFill}
+            style={{ background: card.gradient }}
+            aria-hidden="true"
+          >
+            <span className={styles.panelMono}>{card.mono}</span>
+          </div>
+          {card.live && (
+            <span className={styles.liveBadge}>
+              <span className={styles.liveDot} /> Live
+            </span>
+          )}
         </div>
       </div>
       <div className={styles.info}>
         <span className={`${styles.tag} ${card.tagClass}`}>{card.tag}</span>
         <h3 className={styles.titleCard}>{card.title}</h3>
         <p className={styles.desc}>{card.desc}</p>
+        {card.href && (
+          <span className={styles.visitLink}>
+            Visit site <span aria-hidden="true">→</span>
+          </span>
+        )}
       </div>
     </>
   )
@@ -132,19 +140,25 @@ export default function Portfolio() {
           Work that speaks for <span className="accentItalic">itself.</span>
         </h2>
         <p className={styles.sub}>
-          Every site we build is fast, beautiful, and built to rank.
+          Real client sites, live across the UK — fast, beautiful, and built to rank.
         </p>
       </div>
 
       <div className={styles.grid}>
-        {cards.map((card, index) =>
-          card.kind === 'client' ? (
-            <Link key={card.title} href={card.href} className={`${styles.card} ${styles.cardLink}`}>
-              <PortfolioCardContent card={card} index={index} />
-            </Link>
+        {cards.map(card =>
+          card.href ? (
+            <a
+              key={card.title}
+              href={card.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.card} ${styles.cardLink}`}
+            >
+              <CardContent card={card} />
+            </a>
           ) : (
-            <article key={card.src} className={styles.card}>
-              <PortfolioCardContent card={card} index={index} />
+            <article key={card.title} className={styles.card}>
+              <CardContent card={card} />
             </article>
           ),
         )}
@@ -172,7 +186,7 @@ export default function Portfolio() {
 
       <div className={styles.viewMoreWrap}>
         <Link href="/work" className={styles.viewMoreBtn}>
-          View more work
+          View case studies
         </Link>
       </div>
     </section>

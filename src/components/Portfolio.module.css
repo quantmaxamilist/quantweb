@@ -158,6 +158,75 @@
   transform: scale(1.02);
 }
 
+/* Branded panel (until a real screenshot is dropped in) */
+.panelFill {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transition: transform 0.5s ease;
+}
+
+.panelFill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.4));
+}
+
+.card:hover .panelFill {
+  transform: scale(1.03);
+}
+
+.panelMono {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(30px, 4.4vw, 46px);
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  text-align: center;
+  white-space: pre-line;
+  color: #fff;
+  opacity: 0.97;
+  padding: 0 18px;
+}
+
+.liveBadge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c7f9e9;
+  background: rgba(6, 32, 26, 0.72);
+  border: 1px solid rgba(40, 200, 150, 0.35);
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+}
+
+.visitLink {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0071e3;
+}
+
 .info {
   padding: 24px 28px 28px;
   flex: 1;
@@ -205,6 +274,22 @@
 
 .tagJaggerz {
   color: #0071e3;
+}
+
+.tagAccent {
+  color: #22d3ee;
+}
+
+.tagGold {
+  color: #d4af37;
+}
+
+.tagRed {
+  color: #f06a72;
+}
+
+.tagGreen {
+  color: #34d399;
 }
 
 .viewMoreWrap {
