@@ -15,17 +15,6 @@ type Card = {
 
 const cards: Card[] = [
   {
-    href: 'https://getintokeepingandfootball.co.uk',
-    domain: 'getintokeepingandfootball.co.uk',
-    gradient: 'linear-gradient(135deg, #0a0a0a, #262626)',
-    mono: 'GIKF',
-    tag: 'Coaching · North West',
-    tagClass: styles.tagAccent,
-    title: 'Get Into Keeping & Football',
-    desc: 'Cinematic video hero, membership plans and a live social feed for a fast-growing coaching academy.',
-    live: true,
-  },
-  {
     href: 'https://rs1.uk',
     domain: 'rs1.uk',
     gradient: 'linear-gradient(135deg, #0a0a0a, #3a2e0a)',
@@ -70,14 +59,14 @@ const cards: Card[] = [
     live: true,
   },
   {
-    href: 'https://voyagercamperconversions.com',
-    domain: 'voyagercamperconversions.com',
-    gradient: 'linear-gradient(135deg, #0f1a1c, #1c3b40)',
-    mono: 'Voyager',
-    tag: 'Camper Conversions · UK',
+    href: 'https://jaggerztakeaway.co.uk',
+    domain: 'jaggerztakeaway.co.uk',
+    gradient: 'linear-gradient(135deg, #1a0d06, #3a1e08)',
+    mono: 'Jaggerz',
+    tag: 'Takeaway · Narberth',
     tagClass: styles.tagAccent,
-    title: 'Voyager Camper Conversions',
-    desc: 'A rugged, gallery-led site for a bespoke campervan and motorhome conversion and hire business.',
+    title: 'Jaggerz Takeaway',
+    desc: 'A warm, appetising one-page site with the real menu, live hours, Google reviews and click-to-call.',
     live: true,
   },
 ]
