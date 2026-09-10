@@ -401,3 +401,26 @@ button:focus-visible {
 .qwhome .map-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:auto;padding:26px 0}
 .qwhome .map-stage img{position:relative;right:auto;top:auto;width:100%;max-width:300px}
 .qwhome .location-pill{left:8px;bottom:12px}
+
+/* ===== full-bleed hero backdrop (laptop scene as banner, text overlaid) ===== */
+.qwhome .hero{position:relative;isolation:isolate;overflow:hidden}
+.qwhome .hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;height:auto;filter:none;pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(5,6,10,.98) 0%, rgba(5,6,10,.86) 22%, rgba(5,6,10,.42) 45%, rgba(5,6,10,0) 66%),
+    linear-gradient(0deg, rgba(5,6,10,.96) 3%, rgba(5,6,10,0) 34%),
+    url('/hero-bg.jpg') center right / cover no-repeat;
+}
+.qwhome .hero .container{position:relative;z-index:1}
+.qwhome .hero-grid{grid-template-columns:1fr;min-height:600px;align-items:center}
+.qwhome .hero-art{display:none}
+.qwhome .hero-copy{max-width:640px}
+.qwhome .proof-grid{position:relative;z-index:1;background:rgba(5,6,10,.66)}
+@media(max-width:900px){
+  .qwhome .hero::before{
+    background:
+      linear-gradient(180deg, rgba(5,6,10,.55) 0%, rgba(5,6,10,.9) 78%),
+      url('/hero-bg.jpg') center right / cover no-repeat;
+  }
+  .qwhome .hero-grid{min-height:500px}
+}
