@@ -121,3 +121,231 @@ button:focus-visible {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* ============================================================
+   QuantWeb homepage — scoped redesign (.qwhome)
+   ============================================================ */
+.qwhome {
+  --bg:#050607;
+  --bg2:#07111d;
+  --panel:#09121d;
+  --panel2:#0b1622;
+  --line:rgba(255,255,255,.105);
+  --line2:rgba(255,255,255,.065);
+  --text:#f7f9fc;
+  --muted:#9ca5b1;
+  --muted2:#707b88;
+  --blue:#087ff5;
+  --blue2:#1596ff;
+  --green:#37e7a0;
+  --max:1180px;
+  --radius:14px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+.qwhome * {box-sizing:border-box}
+.qwhome {scroll-behavior:smooth;background:var(--bg)}
+.qwhome {
+  margin:0;color:var(--text);background:
+    radial-gradient(900px 650px at 80% 5%,rgba(0,105,255,.15),transparent 58%),
+    linear-gradient(180deg,#03080e 0,#05090d 38%,#040608 100%);
+  font-family:var(--font-inter),Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.qwhome a {color:inherit;text-decoration:none}
+.qwhome button, .qwhome a {-webkit-tap-highlight-color:transparent}
+.qwhome img {display:block;max-width:100%}
+.qwhome .container {width:min(calc(100% - 64px),var(--max));margin:auto}
+.qwhome .eyebrow {font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#b7c1cd;font-weight:700}
+.qwhome .blue {color:var(--blue)}
+.qwhome .rule {border-top:1px solid var(--line2)}
+.qwhome .btn {
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:48px;padding:0 22px;border-radius:9px;font-size:14px;font-weight:650;
+  transition:transform .25s var(--ease),border-color .25s,background .25s;
+}
+.qwhome .btn:hover {transform:translateY(-2px)}
+.qwhome .btn.primary {background:linear-gradient(180deg,var(--blue2),var(--blue));box-shadow:0 10px 35px rgba(0,116,255,.22)}
+.qwhome .btn.secondary {border:1px solid rgba(255,255,255,.24);background:rgba(5,8,12,.58)}
+.qwhome .arrow {font-size:18px;line-height:1}
+.qwhome .brand {display:flex;align-items:center;gap:9px;font-weight:750;font-size:16px;white-space:nowrap}
+.qwhome .brand img {width:32px;height:23px;object-fit:contain}
+.qwhome .brand span {letter-spacing:-.02em}
+.qwhome nav {
+  height:72px;display:flex;align-items:center;border-bottom:1px solid var(--line2);
+  position:sticky;top:0;z-index:50;background:rgba(3,7,11,.79);backdrop-filter:blur(18px);
+}
+.qwhome .nav-inner {display:flex;align-items:center;justify-content:space-between;width:min(calc(100% - 64px),var(--max));margin:auto}
+.qwhome .nav-links {display:flex;align-items:center;gap:42px;font-size:13px;color:#d8dee6}
+.qwhome .nav-links a:hover {color:white}
+.qwhome .nav-cta {min-height:40px;border-radius:999px;padding:0 20px}
+.qwhome .hero {
+  position:relative;overflow:hidden;border-bottom:1px solid var(--line2);
+  min-height:560px;
+}
+.qwhome .hero:before {
+  content:"";position:absolute;inset:-80px -160px auto 42%;height:610px;
+  background:radial-gradient(closest-side,rgba(0,115,255,.19),transparent 73%);filter:blur(15px);pointer-events:none;
+}
+.qwhome .hero-grid {display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center;min-height:430px;padding:62px 0 34px}
+.qwhome .hero-copy {position:relative;z-index:3;max-width:590px}
+.qwhome .hero h1 {font-size:clamp(50px,5.2vw,78px);line-height:.99;letter-spacing:-.055em;margin:17px 0 20px;font-weight:780}
+.qwhome .hero p {font-size:18px;line-height:1.55;color:#c3cad2;max-width:510px;margin:0 0 30px}
+.qwhome .actions {display:flex;gap:14px;flex-wrap:wrap}
+.qwhome .hero-art {position:relative;align-self:stretch;min-height:395px}
+.qwhome .hero-art img {
+  position:absolute;width:760px;max-width:none;right:-185px;top:-42px;
+  filter:saturate(1.08) contrast(1.04);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 13%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0,#000 13%,#000 100%);
+}
+.qwhome .proof-grid {display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line2)}
+.qwhome .proof {display:grid;grid-template-columns:44px 1fr;gap:13px;align-items:center;padding:23px 22px 24px 0;position:relative}
+.qwhome .proof:not(:last-child):after {content:"";position:absolute;right:14px;height:42px;width:1px;background:var(--line2)}
+.qwhome .iconbox {width:38px;height:38px;border:1px solid rgba(255,255,255,.25);border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01))}
+.qwhome .proof strong {display:block;font-size:13px;margin-bottom:4px}
+.qwhome .proof small {color:var(--muted);font-size:11px}
+.qwhome section {border-bottom:1px solid var(--line2)}
+.qwhome .work {padding:39px 0 44px}
+.qwhome .section-top {display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.qwhome .link-blue {font-size:13px;color:var(--blue2)}
+.qwhome .work-grid {display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.qwhome .project {
+  border:1px solid var(--line);background:linear-gradient(180deg,rgba(11,22,34,.84),rgba(7,13,20,.8));
+  padding:7px 7px 10px;border-radius:10px;transition:transform .3s var(--ease),border-color .3s;
+}
+.qwhome .project:hover {transform:translateY(-4px);border-color:rgba(0,132,255,.44)}
+.qwhome .project-media {aspect-ratio:1.65/1;border-radius:7px;background-size:cover;background-position:center;border:1px solid rgba(255,255,255,.06)}
+.qwhome .project-body {padding:9px 1px 0}
+.qwhome .project h3 {font-size:13px;margin:0 0 4px;letter-spacing:-.015em}
+.qwhome .project p {font-size:11px;color:var(--muted);margin:0 0 12px;min-height:16px}
+.qwhome .mini-btn {font-size:10px;border:1px solid rgba(255,255,255,.23);border-radius:7px;padding:7px 9px;display:inline-flex;gap:6px}
+.qwhome .results {padding:0;overflow:hidden}
+.qwhome .results-grid {display:grid;grid-template-columns:.83fr 1.17fr;min-height:360px}
+.qwhome .result-copy {padding:58px 30px 54px 18px;display:flex;flex-direction:column;justify-content:center}
+.qwhome .result-copy h2, .qwhome .services h2, .qwhome .perf-copy h2, .qwhome .location-copy h2, .qwhome .cta h2 {font-size:clamp(34px,3.2vw,50px);line-height:1.02;letter-spacing:-.045em;margin:15px 0 16px}
+.qwhome .result-copy p, .qwhome .services-intro, .qwhome .perf-copy p, .qwhome .location-copy p, .qwhome .cta p {font-size:15px;color:var(--muted);line-height:1.55}
+.qwhome .visual-stage {position:relative;min-height:360px;background:
+  radial-gradient(450px 300px at 70% 30%,rgba(0,117,255,.18),transparent 62%),
+  linear-gradient(180deg,#081321,#050a0f)}
+.qwhome .browser {
+  position:absolute;right:-85px;bottom:-62px;width:470px;height:290px;border:1px solid rgba(255,255,255,.14);
+  border-radius:16px;background:linear-gradient(180deg,#0b1725,#06101a);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 60px rgba(0,104,255,.08);
+  transform:rotate(-.8deg);overflow:hidden
+}
+.qwhome .browser-top {height:30px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:5px;padding-left:12px}
+.qwhome .dot {width:6px;height:6px;border-radius:50%;background:#5d6875}
+.qwhome .browser-body {padding:27px}
+.qwhome .browser-brand {display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:#aab4c0}
+.qwhome .browser-brand img {width:18px}
+.qwhome .browser h3 {font-size:32px;line-height:1.02;letter-spacing:-.04em;margin:44px 0 8px;max-width:230px}
+.qwhome .browser p {font-size:10px;color:#768391;max-width:230px;line-height:1.45}
+.qwhome .score {
+  position:absolute;left:-104px;top:50%;transform:translateY(-50%);width:150px;height:150px;border:1px solid var(--line);
+  border-radius:15px;background:linear-gradient(180deg,rgba(14,27,41,.96),rgba(7,14,21,.96));display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,.35)
+}
+.qwhome .ring {width:72px;height:72px;border-radius:50%;background:conic-gradient(var(--green) 0 98%,#163047 98%);display:grid;place-items:center;margin-bottom:10px}
+.qwhome .ring:after {content:"98";width:56px;height:56px;border-radius:50%;background:#07111a;display:grid;place-items:center;font-size:25px;font-weight:750}
+.qwhome .score strong {font-size:13px}
+.qwhome .score small {font-size:10px;color:var(--muted);margin-top:5px}
+.qwhome .services {padding:58px 0 60px}
+.qwhome .services-head {display:grid;grid-template-columns:1fr .72fr;gap:80px;align-items:end;margin-bottom:30px}
+.qwhome .services h2 {max-width:460px;margin-bottom:0}
+.qwhome .services-intro {margin:0 10px 7px 0}
+.qwhome .service-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.qwhome .service-card {border:1px solid var(--line);border-radius:12px;padding:25px 20px 22px;min-height:210px;background:linear-gradient(180deg,rgba(10,20,31,.68),rgba(7,12,18,.84))}
+.qwhome .service-icon {height:39px;margin-bottom:22px;color:white}
+.qwhome .service-card h3 {font-size:14px;margin:0 0 9px}
+.qwhome .service-card p {font-size:12px;line-height:1.55;color:var(--muted);min-height:58px;margin:0 0 17px}
+.qwhome .performance {overflow:hidden}
+.qwhome .perf-grid {display:grid;grid-template-columns:1fr 1fr;min-height:420px}
+.qwhome .phone-stage {position:relative;background:radial-gradient(360px 300px at 32% 75%,rgba(0,119,255,.20),transparent 68%)}
+.qwhome .phone-stage img {position:absolute;width:430px;left:-28px;bottom:-120px}
+.qwhome .perf-copy {padding:62px 30px 53px 22px;display:flex;flex-direction:column;justify-content:center}
+.qwhome .perf-copy h2 {max-width:380px}
+.qwhome .perf-copy p {max-width:520px}
+.qwhome .metrics {display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:27px}
+.qwhome .metric {padding-right:14px;border-right:1px solid var(--line2)}
+.qwhome .metric:last-child {border:0}
+.qwhome .metric strong {display:block;color:var(--blue2);font-size:27px;letter-spacing:-.04em}
+.qwhome .metric span {font-size:9px;color:var(--muted)}
+.qwhome .location {overflow:hidden}
+.qwhome .location-grid {display:grid;grid-template-columns:1fr 1fr;min-height:340px}
+.qwhome .location-copy {padding:55px 20px 48px 18px;display:flex;flex-direction:column;justify-content:center}
+.qwhome .location-copy p {max-width:510px}
+.qwhome .map-stage {position:relative;background:radial-gradient(330px 230px at 65% 55%,rgba(0,116,255,.16),transparent 68%)}
+.qwhome .map-stage img {position:absolute;width:340px;right:20px;top:8px}
+.qwhome .location-pill {position:absolute;left:5%;bottom:64px;display:flex;gap:10px;align-items:center;border:1px solid rgba(0,126,255,.35);background:rgba(3,12,20,.8);border-radius:9px;padding:12px 15px;font-size:10px}
+.qwhome .pin {width:22px;height:22px;border-radius:50% 50% 50% 0;background:var(--blue);transform:rotate(-45deg);position:relative}
+.qwhome .pin:after {content:"";position:absolute;inset:7px;border-radius:50%;background:#06111c}
+.qwhome .cta {text-align:center;padding:57px 20px}
+.qwhome .cta h2 {margin:11px auto 10px}
+.qwhome .cta p {margin:0 auto 24px}
+.qwhome .cta .actions {justify-content:center}
+.qwhome footer {padding:40px 0 0}
+.qwhome .footer-grid {display:grid;grid-template-columns:1.4fr .65fr .75fr;gap:50px;padding-bottom:34px}
+.qwhome .footer-copy {font-size:12px;color:var(--muted);line-height:1.55;max-width:330px;margin-top:15px}
+.qwhome .footer-head {font-size:12px;font-weight:700;margin-bottom:12px}
+.qwhome .footer-links {display:grid;gap:7px;font-size:11px;color:#bac3cd}
+.qwhome .footer-bottom {border-top:1px solid var(--line2);padding:18px 0 24px;color:#687480;font-size:10px;display:flex;justify-content:space-between}
+@media (max-width:1000px){
+.qwhome .nav-links {display:none}
+.qwhome .hero-grid {grid-template-columns:1fr;min-height:auto;padding-top:52px}
+.qwhome .hero-copy {max-width:670px}
+.qwhome .hero-art {min-height:360px}
+.qwhome .hero-art img {right:-110px;top:-40px;width:720px}
+.qwhome .proof-grid {grid-template-columns:repeat(2,1fr)}
+.qwhome .work-grid {grid-template-columns:repeat(3,1fr)}
+.qwhome .project:nth-child(n+4) {display:none}
+.qwhome .results-grid, .qwhome .perf-grid, .qwhome .location-grid {grid-template-columns:1fr}
+.qwhome .visual-stage {min-height:380px}
+.qwhome .browser {right:5%}
+.qwhome .services-head {grid-template-columns:1fr;gap:10px}
+.qwhome .service-grid {grid-template-columns:repeat(2,1fr)}
+.qwhome .phone-stage {min-height:420px}
+.qwhome .phone-stage img {left:50%;transform:translateX(-50%);bottom:-130px}
+.qwhome .map-stage {min-height:330px}
+}
+@media (max-width:680px){
+.qwhome .container, .qwhome .nav-inner {width:min(calc(100% - 32px),var(--max))}
+.qwhome nav {height:64px}
+.qwhome .nav-cta {min-height:38px;padding:0 15px;font-size:12px}
+.qwhome .brand {font-size:14px}
+.qwhome .brand img {width:29px}
+.qwhome .hero-grid {padding-top:45px}
+.qwhome .hero h1 {font-size:48px}
+.qwhome .hero p {font-size:16px}
+.qwhome .hero-art {min-height:265px}
+.qwhome .hero-art img {width:540px;right:-150px;top:-18px}
+.qwhome .proof-grid {grid-template-columns:1fr 1fr}
+.qwhome .proof {padding:17px 8px 17px 0;grid-template-columns:34px 1fr;gap:9px}
+.qwhome .proof:not(:last-child):after {display:none}
+.qwhome .iconbox {width:31px;height:31px;border-radius:9px}
+.qwhome .proof strong {font-size:11px}
+.qwhome .proof small {font-size:9px}
+.qwhome .work {padding-top:30px}
+.qwhome .work-grid {grid-template-columns:1fr 1fr}
+.qwhome .project:nth-child(3) {display:block}
+.qwhome .project:nth-child(n+4) {display:none}
+.qwhome .result-copy {padding-left:0;padding-right:0}
+.qwhome .visual-stage {min-height:330px}
+.qwhome .browser {width:360px;height:240px;right:-45px;bottom:-30px}
+.qwhome .score {left:-45px;width:120px;height:120px}
+.qwhome .services {padding:48px 0}
+.qwhome .service-grid {grid-template-columns:1fr}
+.qwhome .service-card {min-height:auto}
+.qwhome .perf-copy, .qwhome .location-copy {padding-left:0;padding-right:0}
+.qwhome .metrics {grid-template-columns:repeat(2,1fr);row-gap:20px}
+.qwhome .metric:nth-child(2) {border:0}
+.qwhome .phone-stage {min-height:370px}
+.qwhome .phone-stage img {width:390px}
+.qwhome .map-stage img {right:-15px;width:310px}
+.qwhome .location-pill {left:0;bottom:50px}
+.qwhome .footer-grid {grid-template-columns:1fr 1fr}
+.qwhome .footer-grid>div:first-child {grid-column:1/-1}
+.qwhome .footer-bottom {gap:20px;flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+.qwhome * {scroll-behavior:auto!important;transition:none!important}
+}
+
+.qwhome h1,.qwhome h2,.qwhome h3,.qwhome h4{font-family:var(--font-inter),Inter,sans-serif}

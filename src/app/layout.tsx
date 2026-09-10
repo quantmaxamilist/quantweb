@@ -1,7 +1,14 @@
 import type { Metadata } from 'next'
-import { Fraunces, Hanken_Grotesk } from 'next/font/google'
+import { Fraunces, Hanken_Grotesk, Inter } from 'next/font/google'
 import './globals.css'
 import RevealProvider from '@/components/RevealProvider'
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -164,7 +171,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${fraunces.variable} ${hankenGrotesk.variable}`}>
+    <html lang="en-GB" className={`${fraunces.variable} ${hankenGrotesk.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"
