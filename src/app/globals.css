@@ -375,3 +375,13 @@ button:focus-visible {
 @media(max-width:1000px){.qwhome .hero-art img{max-width:560px}}
 .qwhome .phone-stage{position:relative;min-height:auto;display:flex;align-items:center;justify-content:center;padding:34px 0}
 .qwhome .phone-stage img{position:relative;left:auto;bottom:auto;width:100%;max-width:330px}
+
+/* ---- fixes: overflow, results card, map containment ---- */
+.qwhome{overflow-x:hidden}
+.qwhome .visual-stage{display:flex;align-items:center;justify-content:center;min-height:320px;padding:30px}
+.qwhome .score-card{width:230px;padding:34px 24px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(14,27,41,.96),rgba(7,14,21,.96));display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.qwhome .score-card strong{font-size:15px;margin-top:6px}
+.qwhome .score-card small{font-size:11px;color:var(--muted);margin-top:6px}
+.qwhome .map-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:auto;padding:26px 0}
+.qwhome .map-stage img{position:relative;right:auto;top:auto;width:100%;max-width:300px}
+.qwhome .location-pill{left:8px;bottom:12px}

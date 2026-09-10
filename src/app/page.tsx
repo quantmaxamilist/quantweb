@@ -148,15 +148,11 @@ export default function Home() {
                   <a className="btn primary" href="#services">Explore our services →</a>
                 </div>
               </div>
-              <div className="visual-stage">
-                <div className="browser">
-                  <div className="browser-top"><i className="dot" /><i className="dot" /><i className="dot" /></div>
-                  <div className="browser-body">
-                    <div className="browser-brand"><img src="/qw-logo.svg" alt="" />QuantWeb</div>
-                    <h3>Your business.<br />next level.</h3>
-                    <p>Performance-first web design and SEO foundations engineered around measurable growth.</p>
-                  </div>
-                  <div className="score"><div className="ring" /><strong>Performance</strong><small>Google Lighthouse</small></div>
+              <div className="visual-stage reveal">
+                <div className="score-card">
+                  <div className="ring" />
+                  <strong>Performance</strong>
+                  <small>Google Lighthouse — every build</small>
                 </div>
               </div>
             </div>
