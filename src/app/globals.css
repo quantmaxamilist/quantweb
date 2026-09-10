@@ -168,7 +168,7 @@ button:focus-visible {
 .qwhome .btn.secondary {border:1px solid rgba(255,255,255,.24);background:rgba(5,8,12,.58)}
 .qwhome .arrow {font-size:18px;line-height:1}
 .qwhome .brand {display:flex;align-items:center;gap:9px;font-weight:750;font-size:16px;white-space:nowrap}
-.qwhome .brand img {width:32px;height:23px;object-fit:contain}
+.qwhome .brand img {width:40px;height:25px;object-fit:contain;object-position:left center}
 .qwhome .brand span {letter-spacing:-.02em}
 .qwhome nav {
   height:72px;display:flex;align-items:center;border-bottom:1px solid var(--line2);
@@ -310,7 +310,7 @@ button:focus-visible {
 .qwhome nav {height:64px}
 .qwhome .nav-cta {min-height:38px;padding:0 15px;font-size:12px}
 .qwhome .brand {font-size:14px}
-.qwhome .brand img {width:29px}
+.qwhome .brand img {width:36px;height:22px}
 .qwhome .hero-grid {padding-top:45px}
 .qwhome .hero h1 {font-size:48px}
 .qwhome .hero p {font-size:16px}
