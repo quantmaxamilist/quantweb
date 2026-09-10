@@ -450,3 +450,34 @@ button:focus-visible {
   .qwhome .case-list{grid-template-columns:1fr;gap:16px}
   .qwhome .work-hero{padding:52px 0 20px}
 }
+
+/* ===== Our Work — device showcase (laptop + mobile) ===== */
+.qwhome .cs-list{display:flex;flex-direction:column;gap:78px;padding:24px 0 76px}
+.qwhome .cs-item{display:flex;gap:52px;align-items:center}
+.qwhome .cs-item:nth-child(even){flex-direction:row-reverse}
+.qwhome .cs-media{flex:1.15;position:relative;min-width:0}
+.qwhome .cs-text{flex:.85;min-width:0}
+/* mac browser frame */
+.qwhome .cs-browser{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#0b1622;box-shadow:0 34px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.03)}
+.qwhome .cs-bar{height:36px;display:flex;align-items:center;gap:7px;padding:0 15px;background:#0e1a28;border-bottom:1px solid var(--line2)}
+.qwhome .cs-dot{width:10px;height:10px;border-radius:50%}
+.qwhome .cs-url{margin:0 auto;font-size:11px;color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--line2);border-radius:999px;padding:4px 16px;max-width:60%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.qwhome .cs-shot{aspect-ratio:16/10;background-size:cover;background-position:top center;background-color:#050a0f}
+/* overlapping phone */
+.qwhome .cs-phone{position:absolute;right:-10px;bottom:-30px;width:22%;min-width:96px;max-width:140px;padding:5px;border-radius:22px;background:#0b1119;border:3px solid #232c38;box-shadow:0 22px 46px rgba(0,0,0,.55)}
+.qwhome .cs-phone-screen{aspect-ratio:9/19.2;border-radius:15px;overflow:hidden;background-size:cover;background-position:top center;background-color:#050a0f}
+.qwhome .cs-item:nth-child(even) .cs-phone{right:auto;left:-10px}
+/* text column */
+.qwhome .cs-text h3{font-size:clamp(26px,2.6vw,34px);letter-spacing:-.03em;font-weight:740;margin:11px 0 6px}
+.qwhome .cs-text h3 .accent{color:var(--blue)}
+.qwhome .cs-sub{font-size:13px;color:var(--muted2);margin:0 0 20px}
+.qwhome .cs-block{margin:0 0 16px}
+.qwhome .cs-block .lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue2);display:block;margin-bottom:6px}
+.qwhome .cs-block p{font-size:14px;line-height:1.65;color:var(--muted);margin:0}
+.qwhome .cs-chips{display:flex;flex-wrap:wrap;gap:7px;margin:16px 0 22px}
+.qwhome .cs-chip{font-size:10.5px;color:#c8d0da;border:1px solid rgba(0,127,245,.28);background:rgba(0,127,245,.09);border-radius:999px;padding:5px 11px}
+@media(max-width:900px){
+  .qwhome .cs-list{gap:52px}
+  .qwhome .cs-item,.qwhome .cs-item:nth-child(even){flex-direction:column;gap:34px}
+  .qwhome .cs-phone{width:26%}
+}

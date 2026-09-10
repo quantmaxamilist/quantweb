@@ -65,31 +65,54 @@ export default function WorkPage() {
 
         <section className="work-body" style={{ borderBottom: 'none' }}>
           <div className="container">
-            <div className="case-list">
-              {caseStudies.map((cs) => (
-                <article className="case-card reveal" key={cs.id}>
-                  <div className="case-media" style={{ backgroundImage: `url('${shots[cs.id] ?? ''}')` }} />
-                  <div className="case-body">
-                    <div className="eyebrow">{sectors[cs.id] ?? cs.subtitle}</div>
-                    <h3>
-                      {cs.title} {cs.accentWord && <span className="accent">{cs.accentWord}</span>}
-                    </h3>
-                    <p>{cs.challenge}</p>
-                    <div className="case-tags">
-                      {cs.services.slice(0, 5).map((s) => (
-                        <span className="case-tag" key={s}>
-                          {s}
-                        </span>
-                      ))}
+            <div className="cs-list">
+              {caseStudies.map((cs) => {
+                const shot = shots[cs.id] ?? ''
+                return (
+                  <article className="cs-item reveal" key={cs.id}>
+                    <div className="cs-media">
+                      <div className="cs-browser">
+                        <div className="cs-bar" aria-hidden="true">
+                          <span className="cs-dot" style={{ background: '#ff5f57' }} />
+                          <span className="cs-dot" style={{ background: '#febc2e' }} />
+                          <span className="cs-dot" style={{ background: '#28c840' }} />
+                          <span className="cs-url">{cs.domain}</span>
+                        </div>
+                        <div className="cs-shot" style={{ backgroundImage: `url('${shot}')` }} />
+                      </div>
+                      <div className="cs-phone" aria-hidden="true">
+                        <div className="cs-phone-screen" style={{ backgroundImage: `url('${shot}')` }} />
+                      </div>
                     </div>
-                    <div className="case-actions">
+
+                    <div className="cs-text">
+                      <div className="eyebrow">{sectors[cs.id] ?? cs.subtitle}</div>
+                      <h3>
+                        {cs.title} {cs.accentWord && <span className="accent">{cs.accentWord}</span>}
+                      </h3>
+                      <p className="cs-sub">{cs.subtitle}</p>
+                      <div className="cs-block">
+                        <span className="lbl">The challenge</span>
+                        <p>{cs.challenge}</p>
+                      </div>
+                      <div className="cs-block">
+                        <span className="lbl">What we did</span>
+                        <p>{cs.solution}</p>
+                      </div>
+                      <div className="cs-chips">
+                        {cs.services.map((s) => (
+                          <span className="cs-chip" key={s}>
+                            {s}
+                          </span>
+                        ))}
+                      </div>
                       <a className="btn primary" href={cs.url} target="_blank" rel="noopener noreferrer">
                         Visit live site ↗
                       </a>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                )
+              })}
             </div>
           </div>
         </section>
