@@ -349,3 +349,29 @@ button:focus-visible {
 }
 
 .qwhome h1,.qwhome h2,.qwhome h3,.qwhome h4{font-family:var(--font-inter),Inter,sans-serif}
+
+/* ---- homepage additions: what-we-do, faq, quote form, hero/phone fixes ---- */
+.qwhome .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:1000px){.qwhome .trio{grid-template-columns:1fr}}
+.qwhome .step-num{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--blue2);margin-bottom:16px}
+
+.qwhome .faq{padding:56px 0}
+.qwhome .faq-list{display:grid;gap:12px;max-width:900px;margin:26px auto 0}
+.qwhome .faq-item{border:1px solid var(--line);border-radius:12px;padding:20px 22px;background:linear-gradient(180deg,rgba(10,20,31,.6),rgba(7,12,18,.78))}
+.qwhome .faq-item h3{font-size:15px;margin:0 0 8px}
+.qwhome .faq-item p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+
+.qwhome .quote-form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:480px;margin:26px auto 0}
+.qwhome .quote-input{flex:1 1 240px;min-height:48px;padding:0 16px;border-radius:9px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);color:var(--text);font-size:14px;font-family:inherit}
+.qwhome .quote-input::placeholder{color:var(--muted2)}
+.qwhome .quote-input:focus{outline:none;border-color:var(--blue)}
+.qwhome .form-err{color:#ff7676;font-size:12px;margin:12px 0 0;width:100%}
+.qwhome .form-thanks{color:var(--green);font-weight:650;margin:26px 0 0}
+.qwhome .cta-alt{font-size:13px;color:var(--muted);margin-top:16px}
+.qwhome .cta-alt a{color:var(--blue2)}
+
+.qwhome .hero-art{position:relative;min-height:auto;display:flex;align-items:center;justify-content:center}
+.qwhome .hero-art img{position:relative;right:auto;top:auto;width:100%;max-width:620px;-webkit-mask-image:none;mask-image:none;filter:none;border-radius:12px}
+@media(max-width:1000px){.qwhome .hero-art img{max-width:560px}}
+.qwhome .phone-stage{position:relative;min-height:auto;display:flex;align-items:center;justify-content:center;padding:34px 0}
+.qwhome .phone-stage img{position:relative;left:auto;bottom:auto;width:100%;max-width:330px}
