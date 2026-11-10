@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
+import GoogleReviews from '@/components/GoogleReviews'
+import SiteFooter from '@/components/SiteFooter'
+import { faqsCore, towns } from '@/data/site'
 
 export const metadata: Metadata = {
   title: 'Websites that actually perform',
@@ -12,27 +15,11 @@ const projects = [
   { img: '/work-scarlatt.jpg', title: 'Scarlatt Property Development', tag: 'Property & Development' },
   { img: '/work-boxedfresh.jpg', title: 'Boxed Fresh', tag: 'Food & E-commerce' },
   { img: '/work-ecoheat.jpg', title: 'EcoHeat', tag: 'Renewable Energy' },
-  { img: '/work-jaggerz.jpg', title: 'Jaggerz', tag: 'Barbers & Local Business' },
+  { img: '/work-jaggerz.jpg', title: 'Jaggerz', tag: 'Food & Takeaway' },
 ]
 
-const faqs = [
-  {
-    q: 'How much does a website cost?',
-    a: 'A professional business website typically costs between £350 and £8,000 depending on complexity. At QuantWeb, pricing starts from £350 for a clean, fast, fully optimised site — with no monthly retainers.',
-  },
-  {
-    q: 'How long does SEO take to work?',
-    a: 'Local SEO can show movement within 6–8 weeks. Competitive UK-wide rankings typically take 3–6 months. We focus on quick local wins first, then build long-term authority.',
-  },
-  {
-    q: 'Do you work with businesses outside South Wales?',
-    a: 'Yes — while based in South Wales, we work with businesses across the UK. All project work runs remotely with regular calls and clear communication throughout.',
-  },
-  {
-    q: 'What makes QuantWeb different?',
-    a: 'We combine web design and SEO under one roof, and hand-code every site for performance — 98+ Lighthouse as standard. You deal directly with the person building your site, with no lock-in.',
-  },
-]
+const faqs = faqsCore
+const localTowns = towns.filter((t) => t.note)
 
 export default function Home() {
   return (
@@ -46,9 +33,9 @@ export default function Home() {
           <div className="nav-links">
             <a href="#work">Our work</a>
             <a href="#services">Services</a>
-            <a href="#why">Why us</a>
+            <a href="/web-design">Areas</a>
+            <a href="#reviews">Reviews</a>
             <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
           </div>
           <a className="btn primary nav-cta" href="#contact">
             Get in touch <span className="arrow">→</span>
@@ -256,18 +243,23 @@ export default function Home() {
           <div className="container">
             <div className="location-grid">
               <div className="location-copy reveal">
-                <div className="eyebrow">South Wales roots. UK wide reach.</div>
-                <h2>Proudly based<br />in South Wales.</h2>
-                <p>We work with businesses in Cardiff, Swansea, Newport, Bridgend and across the UK, helping them grow with effective, results-driven websites.</p>
-                <div style={{ marginTop: '20px' }}><a className="btn primary" href="#contact">Start your project →</a></div>
+                <div className="eyebrow">Pembrokeshire roots. UK wide reach.</div>
+                <h2>Web design across<br />South &amp; West Wales.</h2>
+                <p>We build websites for businesses across Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, the Vale of Glamorgan, the valleys, Newport and Monmouthshire — and right across the UK.</p>
+                <p className="town-inline">
+                  {localTowns.map((t, i) => (<span key={t.slug}>{i > 0 && ' · '}<a href={`/web-design/${t.slug}`}>{t.name}</a></span>))}
+                </p>
+                <div style={{ marginTop: '20px' }}><a className="btn primary" href="/web-design">All areas we cover →</a></div>
               </div>
               <div className="map-stage reveal">
                 <img src="/uk-map.png" alt="UK map highlighting QuantWeb's South Wales base and UK-wide reach" />
-                <div className="location-pill"><span className="pin" /><span><strong>Based in South Wales</strong><br /><span style={{ color: 'var(--muted)' }}>Working across the UK</span></span></div>
+                <div className="location-pill"><span className="pin" /><span><strong>Based in Pembrokeshire</strong><br /><span style={{ color: 'var(--muted)' }}>Working across the UK</span></span></div>
               </div>
             </div>
           </div>
         </section>
+
+        <GoogleReviews />
 
         {/* FAQ */}
         <section className="faq" id="faq">
@@ -299,38 +291,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer id="footer">
-        <div className="container">
-          <div className="footer-grid">
-            <div>
-              <a className="brand" href="#top"><img src="/qw-logo.svg" alt="" /><span>QuantWeb</span></a>
-              <p className="footer-copy">Web design, SEO and high-performance websites for ambitious businesses across South Wales and the UK.</p>
-            </div>
-            <div>
-              <div className="footer-head">Quick links</div>
-              <div className="footer-links">
-                <a href="#work">Our work</a>
-                <a href="#services">Services</a>
-                <a href="#why">Why us</a>
-                <a href="#faq">FAQ</a>
-                <a href="/work">Case studies</a>
-              </div>
-            </div>
-            <div>
-              <div className="footer-head">Get in touch</div>
-              <div className="footer-links">
-                <a href="mailto:admin@quantweb.co.uk">✉ &nbsp; admin@quantweb.co.uk</a>
-                <span>◎ &nbsp; South Wales, UK</span>
-                <a href="#contact">Start your project →</a>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <span>© 2026 QuantWeb. All rights reserved.</span>
-            <span>Modern. Trusted. High performance.</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

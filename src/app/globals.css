@@ -481,3 +481,37 @@ button:focus-visible {
   .qwhome .cs-item,.qwhome .cs-item:nth-child(even){flex-direction:column;gap:34px}
   .qwhome .cs-phone{width:26%}
 }
+
+/* ---- SEO additions: reviews, footer areas, town pages ---- */
+.qwhome .reviews{padding:52px 0}
+.qwhome .reviews-card{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:30px 32px;background:linear-gradient(180deg,rgba(10,20,31,.68),rgba(7,12,18,.84))}
+.qwhome .reviews-g{width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.qwhome .reviews-copy h2{font-size:clamp(28px,2.6vw,40px);line-height:1.05;letter-spacing:-.04em;margin:10px 0 8px}
+.qwhome .reviews-copy p{font-size:14px;color:var(--muted);line-height:1.55;margin:0;max-width:560px}
+@media(max-width:1000px){.qwhome .reviews-card{grid-template-columns:1fr}}
+.qwhome .footer-grid--4{grid-template-columns:1.2fr .6fr 1fr .8fr}
+.qwhome .footer-links--2{grid-template-columns:1fr 1fr;column-gap:16px}
+@media(max-width:1000px){.qwhome .footer-grid--4{grid-template-columns:1fr 1fr}.qwhome .footer-grid--4>div:first-child{grid-column:1/-1}}
+.qwhome .crumbs{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.qwhome .crumbs a:hover{color:#fff}
+.qwhome .town-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:18px}
+.qwhome .town-link{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:13px 15px;font-size:14px;background:rgba(10,20,31,.5);transition:border-color .2s}
+.qwhome .town-link:hover{border-color:var(--blue2)}
+.qwhome .town-link small{color:var(--muted2);font-size:11px}
+.qwhome .county{padding:40px 0;border-bottom:1px solid var(--line2)}
+.qwhome .county h2{font-size:clamp(26px,2.4vw,36px);letter-spacing:-.04em;margin:0}
+.qwhome .area-split{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;padding:52px 0}
+.qwhome .area-split h2{font-size:clamp(28px,2.6vw,40px);line-height:1.05;letter-spacing:-.04em;margin:12px 0 14px}
+.qwhome .area-split p{font-size:15px;color:var(--muted);line-height:1.6;margin:0 0 14px}
+.qwhome .client-list{display:grid;gap:10px;margin-top:6px}
+.qwhome .client{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:rgba(10,20,31,.55)}
+.qwhome .client strong{display:block;font-size:14px}
+.qwhome .client span{font-size:12px;color:var(--muted)}
+@media(max-width:900px){.qwhome .area-split{grid-template-columns:1fr;gap:28px}}
+.qwhome .town-inline{font-size:13px !important;line-height:1.9 !important;color:var(--muted2) !important}
+.qwhome .town-inline a{color:#c3cad2}
+.qwhome .town-inline a:hover{color:var(--blue2)}
+.qwhome .faq .services-head h2{font-size:clamp(34px,3.2vw,50px);line-height:1.02;letter-spacing:-.045em;margin:15px 0 0}
+.qwhome .region-head{padding:56px 0 8px;border-bottom:0}
+.qwhome .region-head h2 a:hover,.qwhome .county h2 a:hover,.qwhome .county-h a:hover{color:var(--blue2)}
+.qwhome .county-h{font-size:clamp(22px,2vw,30px);letter-spacing:-.035em;margin:0}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Fraunces, Hanken_Grotesk, Inter } from 'next/font/google'
 import './globals.css'
 import RevealProvider from '@/components/RevealProvider'
+import { SITE, business, towns, counties, services, faqsCore } from '@/data/site'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,12 +29,21 @@ const hankenGrotesk = Hanken_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.quantweb.co.uk'),
   title: {
-    default: 'QuantWeb Studio | Web Design & SEO Agency South Wales',
+    default: 'QuantWeb | Web Design South & West Wales — Pembrokeshire, Carmarthenshire, Swansea & Cardiff',
     template: '%s | QuantWeb Studio',
   },
   description:
-    'QuantWeb Studio — South Wales web design and SEO agency. We build fast, beautiful websites and drive organic traffic for businesses across Cardiff, Swansea, Newport and the UK.',
+    'QuantWeb — web design and local SEO across South and West Wales. Fast, hand-coded websites from £350 for businesses in Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, Newport and across the UK.',
   keywords: [
+    'web design south west wales',
+    'web design west wales',
+    'web designer pembrokeshire',
+    'web design pembrokeshire',
+    'web design carmarthenshire',
+    'web design haverfordwest',
+    'web design carmarthen',
+    'web design llanelli',
+    'web design tenby',
     'web design south wales',
     'web studio wales',
     'SEO agency south wales',
@@ -79,7 +89,7 @@ export const metadata: Metadata = {
   },
   other: {
     'geo.region': 'GB-WLS',
-    'geo.placename': 'South Wales',
+    'geo.placename': 'Pembrokeshire, Wales',
   },
 }
 
@@ -87,32 +97,27 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'LocalBusiness',
-      '@id': 'https://www.quantweb.co.uk/#business',
-      name: 'QuantWeb Studio',
-      url: 'https://www.quantweb.co.uk',
-      logo: 'https://www.quantweb.co.uk/favicon.svg',
-      image: 'https://www.quantweb.co.uk/og-image.jpg',
+      '@type': ['ProfessionalService', 'LocalBusiness'],
+      '@id': `${SITE}/#business`,
+      name: business.name,
+      alternateName: business.altName,
+      url: SITE,
+      logo: `${SITE}/qw-logo.svg`,
+      image: `${SITE}/og-image.jpg`,
       description:
-        'QuantWeb Studio is a web design and SEO agency based in South Wales, building high-performance websites and delivering organic growth for businesses across the UK.',
-      telephone: '+44-XXXX-XXXXXX',
-      email: 'hello@quantweb.co.uk',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'South Wales',
-        addressRegion: 'Wales',
-        addressCountry: 'GB',
-      },
-      geo: { '@type': 'GeoCoordinates', latitude: '51.4816', longitude: '-3.1791' },
+        'QuantWeb is a web design and local SEO studio founded in Pembrokeshire by Keeron John. It hand-codes fast, SEO-ready websites for small businesses and tradespeople across South and West Wales — Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, the Vale of Glamorgan, the South Wales valleys, Newport and Monmouthshire — and the rest of the UK, from £350 with no monthly retainers.',
+      email: business.email,
+      founder: { '@type': 'Person', name: business.owner, jobTitle: 'Web designer & founder' },
+      address: { '@type': 'PostalAddress', addressRegion: 'Wales', addressCountry: 'GB' },
       areaServed: [
-        { '@type': 'Place', name: 'South Wales' },
-        { '@type': 'Place', name: 'Cardiff' },
-        { '@type': 'Place', name: 'Swansea' },
-        { '@type': 'Place', name: 'Newport' },
-        { '@type': 'Place', name: 'Bridgend' },
-        { '@type': 'Place', name: 'United Kingdom' },
+        ...counties.map((c) => ({ '@type': 'AdministrativeArea', name: c })),
+        ...towns.map((t) => ({ '@type': 'City', name: t.name })),
+        { '@type': 'Country', name: 'United Kingdom' },
       ],
-      priceRange: '££',
+      knowsAbout: ['Web design', 'Website development', 'Local SEO', 'Search engine optimisation', 'Google Business Profile', 'Structured data', 'Website performance', 'Astro', 'Next.js'],
+      makesOffer: services.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, description: s.d } })),
+      priceRange: 'From £350',
+      sameAs: [business.instagram],
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -122,49 +127,16 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://www.quantweb.co.uk/#website',
-      url: 'https://www.quantweb.co.uk',
-      name: 'QuantWeb Studio',
-      publisher: { '@id': 'https://www.quantweb.co.uk/#business' },
+      '@id': `${SITE}/#website`,
+      url: SITE,
+      name: business.name,
+      publisher: { '@id': `${SITE}/#business` },
       inLanguage: 'en-GB',
     },
     {
       '@type': 'FAQPage',
-      '@id': 'https://www.quantweb.co.uk/#faq',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'How much does a website cost in South Wales?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'A professional business website in South Wales typically costs between £350 and £8,000 depending on complexity. At QuantWeb Studio, pricing starts from £350 for a clean, fast, fully optimised site.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How long does SEO take to work in the UK?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Local SEO can show movement within 6–8 weeks. Competitive UK-wide rankings typically take 3–6 months. We focus on quick local wins first, then build long-term authority.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Do you work with businesses outside South Wales?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes — while based in South Wales, we work with businesses across the UK. All project work runs remotely with regular video calls and clear communication throughout.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What makes QuantWeb different from other web agencies?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'We combine web design and SEO under one roof. Most agencies do one or the other. We build your site to rank from day one — design, code, and content strategy aligned from the start.',
-          },
-        },
-      ],
+      '@id': `${SITE}/#faq`,
+      mainEntity: faqsCore.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
     },
   ],
 }
