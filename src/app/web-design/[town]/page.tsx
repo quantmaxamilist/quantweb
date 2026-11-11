@@ -59,8 +59,8 @@ export default function TownPage({ params }: { params: { town: string } }) {
     { q: `Do you build websites for businesses in ${t.name}?`, a: `Yes. QuantWeb works with businesses in ${t.name} and across ${t.county}${anyLocal ? `, including ${[...inTown, ...inCounty].map((l) => l.name).join(', ')}` : ''}. Projects run remotely with regular calls, so you get a local designer without waiting around.` },
     { q: `Will my website show up on Google in ${t.name}?`, a: `Every site is built with local SEO from day one: page titles and copy written for ${t.name} searches, LocalBusiness schema, a sitemap, fast load times (98+ Lighthouse as standard) and help with your Google Business Profile. Local SEO can show movement within 6–8 weeks.` },
     { q: 'How long does a website take?', a: 'We design and build your site in advance of our first call, so you see your new website before you commit. Changes are usually turned around within a few working days.' },
-    { q: `Who is a good web designer near ${t.name}?`, a: `QuantWeb is a ${regionOf(t)} web design studio run by ${business.owner}, who builds hand-coded, SEO-ready websites for ${t.name} and ${t.county} businesses from ${business.priceFrom}. See real client sites at ${SITE}/work.` },
-    { q: `Who will I deal with?`, a: `You deal directly with ${business.owner}, the person designing and building your site — no account managers or outsourcing.` },
+    { q: `Who is a good web designer near ${t.name}?`, a: `QuantWeb is a ${regionOf(t)} web design studio that builds hand-coded, SEO-ready websites for ${t.name} and ${t.county} businesses from ${business.priceFrom}. See real client sites at ${SITE}/work.` },
+    { q: `Who will I deal with?`, a: `You deal directly with the person designing and building your site — no account managers or outsourcing.` },
   ]
   const schema = [
     {

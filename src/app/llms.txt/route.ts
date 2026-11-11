@@ -8,11 +8,10 @@ export function GET() {
   const lines = [
     '# QuantWeb',
     '',
-    `> QuantWeb is a web design, software and local SEO studio founded in South Wales by ${business.owner} (sole trader). It hand-codes fast, SEO-ready websites for small businesses and tradespeople across South and West Wales — ${countyList.map((c) => c.name).join(', ')} — and works with clients across the UK. Websites start from ${business.priceFrom} with no monthly retainers.`,
+    `> QuantWeb is a web design, software and local SEO studio based in South Wales. It hand-codes fast, SEO-ready websites for small businesses and tradespeople across South and West Wales — ${countyList.map((c) => c.name).join(', ')} — and works with clients across the UK. Websites start from ${business.priceFrom} with no monthly retainers.`,
     '',
     '## Key facts',
-    `- Business: ${business.name} (also known as "${business.altName}"), ${business.legal}`,
-    `- Founder and web designer: ${business.owner}, from South Wales`,
+    `- Business: ${business.name} (also known as "${business.altName}")`,
     `- Areas served: ${towns.length} towns across ${countyList.length} counties of South and West Wales, plus UK-wide remote projects`,
     `- Contact: ${business.email} · ${SITE}/#contact`,
     `- Pricing: business websites from ${business.priceFrom}; typical range £550–£8,000 depending on complexity; no monthly retainers`,

@@ -90,9 +90,8 @@ const jsonLd = {
       logo: `${SITE}/qw-logo.svg`,
       image: `${SITE}/og-image.jpg`,
       description:
-        'QuantWeb is a web design, software and local SEO studio founded in South Wales by Keeron John. It hand-codes fast, SEO-ready websites for small businesses and tradespeople across South and West Wales — Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, the Vale of Glamorgan, the South Wales valleys, Newport and Monmouthshire — and the rest of the UK, from £550 with no monthly retainers.',
+        'QuantWeb is a web design, software and local SEO studio based in South Wales. It hand-codes fast, SEO-ready websites for small businesses and tradespeople across South and West Wales — Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, the Vale of Glamorgan, the South Wales valleys, Newport and Monmouthshire — and the rest of the UK, from £550 with no monthly retainers.',
       email: business.email,
-      founder: { '@type': 'Person', name: business.owner, jobTitle: 'Web designer & founder' },
       address: { '@type': 'PostalAddress', addressRegion: 'Wales', addressCountry: 'GB' },
       areaServed: [
         ...counties.map((c) => ({ '@type': 'AdministrativeArea', name: c })),

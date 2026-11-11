@@ -17,7 +17,7 @@ export default function SiteFooter() {
         </div>
         <div className="fb">
           <div className="soc"><a href={business.instagram} target="_blank" rel="noopener">Instagram</a><a href={google.url} target="_blank" rel="noopener">Google</a></div>
-          <span>© {new Date().getFullYear()} QuantWeb · {business.legal}</span>
+          <span>© {new Date().getFullYear()} QuantWeb</span>
           <a href="/privacy">Privacy Policy</a>
         </div>
       </div>

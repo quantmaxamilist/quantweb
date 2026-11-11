@@ -24,7 +24,7 @@ export default function PrivacyPage() {
         <section style={{ paddingTop: 10 }}>
           <div className="container legal-doc">
             <h2>Who we are</h2>
-            <p>This website is run by {business.legal} (&ldquo;QuantWeb&rdquo;, &ldquo;we&rdquo;). We are the data controller for personal information collected through it. Contact: <a href={`mailto:${business.email}`}>{business.email}</a>.</p>
+            <p>This website is run by QuantWeb (&ldquo;we&rdquo;), a web design studio based in South Wales. We are the data controller for personal information collected through it. Contact: <a href={`mailto:${business.email}`}>{business.email}</a>.</p>
             <h2>What we collect</h2>
             <p>When you use our enquiry form we collect your name, email address, phone number (if given) and your message. We don&apos;t collect anything else through the site and we don&apos;t use advertising or analytics cookies.</p>
             <h2>How we use it</h2>

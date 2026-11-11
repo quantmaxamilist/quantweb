@@ -34,7 +34,7 @@ export default function AreasPage() {
             <div className="eyebrow" style={{ marginTop: 18 }}>Web design &amp; local SEO</div>
             <h1>Web design across<br /><span className="blue">South &amp; West Wales.</span></h1>
             <p>
-              QuantWeb is a web design studio founded in South Wales by {business.owner}. We build fast, hand-coded websites with local SEO
+              QuantWeb is a web design studio based in South Wales. We build fast, hand-coded websites with local SEO
               built in for businesses in {towns.length} towns across {countyList.length} counties of South and West Wales — from {business.priceFrom}, with no monthly retainers.
             </p>
             <div className="actions" style={{ marginTop: 22 }}>

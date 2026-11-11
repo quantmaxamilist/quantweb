@@ -43,10 +43,10 @@ export default function Home() {
       </div></section>
       
       {/* LOGOS */}
-      <div className="logos"><div className="mq"><div className="tr">
-        <span className="wm"><i>A</i>Asteria</span><span className="wm"><i>V</i>Voyager</span><span className="wm"><i>D</i>Dream Home Mortgages</span><span className="wm"><i>V</i>Vector Specialist</span><span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span>
-        <span className="wm"><i>A</i>Asteria</span><span className="wm"><i>V</i>Voyager</span><span className="wm"><i>D</i>Dream Home Mortgages</span><span className="wm"><i>V</i>Vector Specialist</span><span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span>
-      </div></div></div>
+      <div className="logos" aria-label="Clients with live QuantWeb sites"><div className="mq"><div className="tr">
+          <img src="/logos/asteria.png" alt="Asteria" width="165" height="36" loading="lazy" /><img src="/logos/voyager.png" alt="Voyager Camper Conversions" width="194" height="48" loading="lazy" /><img src="/logos/dreamhome.png" alt="Dream Home Mortgages" width="86" height="75" loading="lazy" /><img src="/logos/vector.png" alt="Vector Specialist" width="77" height="75" loading="lazy" /><img src="/logos/rs1.png" alt="RS1 Capital" width="89" height="60" loading="lazy" /><img src="/logos/scarlatt.png" alt="Scarlatt Property Development" width="151" height="42" loading="lazy" /><img src="/logos/ecoheat.png" alt="EcoHeat ASHP" width="125" height="50" loading="lazy" /><img src="/logos/jaggerz.png" alt="Jaggerz Takeaway" width="67" height="65" loading="lazy" /><img src="/logos/asteria.png" alt="" width="165" height="36" loading="lazy" /><img src="/logos/voyager.png" alt="" width="194" height="48" loading="lazy" /><img src="/logos/dreamhome.png" alt="" width="86" height="75" loading="lazy" /><img src="/logos/vector.png" alt="" width="77" height="75" loading="lazy" /><img src="/logos/rs1.png" alt="" width="89" height="60" loading="lazy" /><img src="/logos/scarlatt.png" alt="" width="151" height="42" loading="lazy" /><img src="/logos/ecoheat.png" alt="" width="125" height="50" loading="lazy" /><img src="/logos/jaggerz.png" alt="" width="67" height="65" loading="lazy" />
+          <img src="/logos/asteria.png" alt="" width="165" height="36" loading="lazy" /><img src="/logos/voyager.png" alt="" width="194" height="48" loading="lazy" /><img src="/logos/dreamhome.png" alt="" width="86" height="75" loading="lazy" /><img src="/logos/vector.png" alt="" width="77" height="75" loading="lazy" /><img src="/logos/rs1.png" alt="" width="89" height="60" loading="lazy" /><img src="/logos/scarlatt.png" alt="" width="151" height="42" loading="lazy" /><img src="/logos/ecoheat.png" alt="" width="125" height="50" loading="lazy" /><img src="/logos/jaggerz.png" alt="" width="67" height="65" loading="lazy" /><img src="/logos/asteria.png" alt="" width="165" height="36" loading="lazy" /><img src="/logos/voyager.png" alt="" width="194" height="48" loading="lazy" /><img src="/logos/dreamhome.png" alt="" width="86" height="75" loading="lazy" /><img src="/logos/vector.png" alt="" width="77" height="75" loading="lazy" /><img src="/logos/rs1.png" alt="" width="89" height="60" loading="lazy" /><img src="/logos/scarlatt.png" alt="" width="151" height="42" loading="lazy" /><img src="/logos/ecoheat.png" alt="" width="125" height="50" loading="lazy" /><img src="/logos/jaggerz.png" alt="" width="67" height="65" loading="lazy" />
+        </div></div></div>
       
       {/* SERVICES */}
       <section id="services"><div className="wrap">
@@ -141,12 +141,28 @@ export default function Home() {
         <h2 className="h2c reveal" style={{marginBottom: '10px'}}>Why choose QuantWeb?</h2>
         <p className="sub-c reveal" style={{margin: '0 0 36px'}}>Helping businesses look their best online and turn more visitors into enquiries.</p>
         <div className="why">
-          <div className="frame reveal"><div className="inner"><h3>Speed you can actually measure</h3><p>98+ Google Lighthouse as standard. Fast sites rank higher and convert better.</p><div className="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#e7f0ff" strokeWidth="10" /><circle cx="60" cy="60" r="50" fill="none" stroke="#0066ff" strokeWidth="10" strokeLinecap="round" strokeDasharray="314" strokeDashoffset="6" transform="rotate(-90 60 60)" /></svg><b>98+</b><small>Performance</small></div></div></div>
+          <div className="frame reveal"><div className="inner">
+            <h3>Speed you can actually measure</h3><p>98+ Google Lighthouse as standard. Fast sites rank higher and convert better.</p>
+            <div className="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="#e7f0ff" strokeWidth="9" /><circle className="arc" cx="60" cy="60" r="50" fill="none" stroke="url(#rg)" strokeWidth="9" strokeLinecap="round" strokeDasharray="314" transform="rotate(-90 60 60)" /><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4d94ff" /><stop offset="1" stopColor="#0052cc" /></linearGradient></defs></svg><b>98+</b><small>Performance</small></div>
+            <div className="scores"><div><b>100</b><span>SEO</span></div><div><b>100</b><span>Best practices</span></div><div><b>100</b><span>Accessibility</span></div></div>
+          </div></div>
           <div className="mid">
-            <div className="frame reveal"><div className="inner"><h3>See it before you commit</h3><p>We design your site before our first call.</p><div className="knob">✓</div></div></div>
-            <div className="frame reveal"><div className="inner"><h3>Pricing without surprises</h3><p>What you see is what you pay.</p><div className="price"><b>£550</b><i></i></div></div></div>
+            <div className="frame reveal"><div className="inner">
+              <h3>See it before you commit</h3><p>We design your site before our first call.</p>
+              <div className="draft"><div className="d-bar"><i /><i /><i /><span>Your new homepage</span></div><div className="d-body"><span className="d-h" /><span className="d-t" /><span className="d-t s" /><span className="d-btn" /><span className="d-img" /></div><em>Ready before we talk</em></div>
+            </div></div>
+            <div className="frame reveal"><div className="inner">
+              <h3>Pricing without surprises</h3><p>A fixed quote up front. What you see is what you pay.</p>
+              <div className="price"><small>Websites from</small><b>£550</b></div>
+              <ul className="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>No monthly retainers</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>You own everything we build</li></ul>
+            </div></div>
           </div>
-          <div className="frame reveal"><div className="inner"><h3>One person, start to finish</h3><p>You deal directly with Keeron — the person designing and building your site.</p><div className="avrow"><span style={{background: '#5f6b3a'}}>AS</span><span style={{background: '#111111'}}>VC</span><span style={{background: '#b98f00'}}>DH</span><span style={{background: '#13294b'}}>VS</span><span style={{background: '#0066ff'}}>RS</span><em>25+</em></div><a className="btn p cta" href="#contact">Be one of them</a></div></div>
+          <div className="frame reveal"><div className="inner last">
+            <h3>One person, start to finish</h3><p>You deal directly with the person designing and building your site.</p>
+            <ul className="ticks big"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>No account managers</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>No outsourcing</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg>A reply within one business day</li></ul>
+            <div className="avrow"><span style={{background: '#5f6b3a'}}>AS</span><span style={{background: '#111111'}}>VC</span><span style={{background: '#b98f00'}}>DH</span><span style={{background: '#13294b'}}>VS</span><span style={{background: '#0066ff'}}>RS</span><em>25+</em></div>
+            <a className="btn p cta" href="#contact">Be one of them</a>
+          </div></div>
         </div>
       </div></section>
       
@@ -173,7 +189,7 @@ export default function Home() {
       <section style={{paddingTop: '20px'}}><div className="wrap about" id="about"><div className="inner frame">
         <h2>QuantWeb</h2>
         <div className="txt">
-          <p>At <b>QuantWeb</b>, we build websites that bring in customers. Founded in South Wales by Keeron John, we hand-code fast, SEO-ready sites for tradespeople, local businesses and growing companies across South and West Wales and the UK.</p>
+          <p>At <b>QuantWeb</b>, we build websites that bring in customers. Based in South Wales, we hand-code fast, SEO-ready sites for tradespeople, local businesses and growing companies across South and West Wales and the UK.</p>
           <h3>Building websites that last</h3>
           <p>Every site is designed before our first call, built for speed (98+ Lighthouse as standard), and launched with local SEO, structured data and AI-search files already in place — so you&apos;re found on Google, Maps and AI assistants from day one.</p>
           <h3>Why businesses choose QuantWeb</h3>

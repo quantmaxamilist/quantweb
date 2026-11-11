@@ -4,8 +4,6 @@ export const SITE = 'https://www.quantweb.co.uk'
 export const business = {
   name: 'QuantWeb',
   altName: 'QuantWeb Studio',
-  owner: 'Keeron John',
-  legal: 'Keeron John, trading as QuantWeb (sole trader)',
   email: 'admin@quantweb.co.uk',
   instagram: 'https://www.instagram.com/quantweb.studio/',
   priceFrom: '£550',
@@ -166,8 +164,8 @@ export const faqsCore = [
     a: 'Local SEO can show movement within 6–8 weeks. Competitive UK-wide rankings typically take 3–6 months. We focus on quick local wins first, then build long-term authority.',
   },
   {
-    q: 'Who runs QuantWeb?',
-    a: 'QuantWeb is run by Keeron John, a web designer from South Wales. You deal directly with the person designing and building your site.',
+    q: 'Who will I deal with?',
+    a: 'QuantWeb is a small web studio based in South Wales. You deal directly with the person designing and building your site — no account managers or outsourcing.',
   },
   {
     q: 'Which areas of Wales do you cover?',
