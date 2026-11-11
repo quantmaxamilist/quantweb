@@ -55,7 +55,7 @@ export default function TownPage({ params }: { params: { town: string } }) {
   const inCounty = localClients.filter((l) => l.county === t.county && l.town !== t.name)
   const anyLocal = inTown.length + inCounty.length > 0
   const faqs = [
-    { q: `How much does a website cost in ${t.name}?`, a: `Websites for ${t.name} businesses start from ${business.priceFrom}. A professional business website typically costs between £350 and £8,000 depending on complexity — with QuantWeb there are no monthly retainers.` },
+    { q: `How much does a website cost in ${t.name}?`, a: `Websites for ${t.name} businesses start from ${business.priceFrom}. A professional business website typically costs between £550 and £8,000 depending on complexity — with QuantWeb there are no monthly retainers.` },
     { q: `Do you build websites for businesses in ${t.name}?`, a: `Yes. QuantWeb works with businesses in ${t.name} and across ${t.county}${anyLocal ? `, including ${[...inTown, ...inCounty].map((l) => l.name).join(', ')}` : ''}. Projects run remotely with regular calls, so you get a local designer without waiting around.` },
     { q: `Will my website show up on Google in ${t.name}?`, a: `Every site is built with local SEO from day one: page titles and copy written for ${t.name} searches, LocalBusiness schema, a sitemap, fast load times (98+ Lighthouse as standard) and help with your Google Business Profile. Local SEO can show movement within 6–8 weeks.` },
     { q: 'How long does a website take?', a: 'We design and build your site in advance of our first call, so you see your new website before you commit. Changes are usually turned around within a few working days.' },
@@ -70,7 +70,7 @@ export default function TownPage({ params }: { params: { town: string } }) {
       serviceType: 'Web design and local SEO',
       provider: { '@id': `${SITE}/#business` },
       areaServed: { '@type': 'City', name: t.name, containedInPlace: { '@type': 'AdministrativeArea', name: t.county }, geo: { '@type': 'GeoCoordinates', latitude: t.lat, longitude: t.lng } },
-      offers: { '@type': 'Offer', priceCurrency: 'GBP', price: '350', description: 'Business websites from £350' },
+      offers: { '@type': 'Offer', priceCurrency: 'GBP', price: '550', description: 'Business websites from £550' },
     },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
     {
@@ -85,7 +85,7 @@ export default function TownPage({ params }: { params: { town: string } }) {
     },
   ]
   return (
-    <div className="qwhome">
+    <div className="qp">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <SiteNav />
       <main id="top">
@@ -140,7 +140,7 @@ export default function TownPage({ params }: { params: { town: string } }) {
           <section className="services">
             <div className="container">
               <div className="services-head"><div><div className="eyebrow">Services</div><h2>Everything you need to grow online in {t.name}.</h2></div></div>
-              <div className="service-grid">
+              <div className="service-grid service-grid--5">
                 {services.map((s) => <article className="service-card" key={s.name}><h3>{s.name}</h3><p>{s.d}</p></article>)}
               </div>
             </div>

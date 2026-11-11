@@ -6,7 +6,7 @@ import { towns, countyList, regions, localClients, business, SITE } from '@/data
 
 export const metadata: Metadata = {
   title: { absolute: 'Web Design South & West Wales | Every Town We Cover | QuantWeb' },
-  description: `Web design & local SEO in ${towns.length} towns across South & West Wales — Pembrokeshire, Carmarthenshire, Swansea, Cardiff, Newport and more. From £350.`,
+  description: `Web design & local SEO in ${towns.length} towns across South & West Wales — Pembrokeshire, Carmarthenshire, Swansea, Cardiff, Newport and more. From £550.`,
   alternates: { canonical: `${SITE}/web-design` },
   openGraph: { title: 'Web Design South & West Wales | QuantWeb', url: `${SITE}/web-design`, images: ['/og-image.jpg'] },
 }
@@ -19,12 +19,12 @@ const schema = [
     { '@type': 'ListItem', position: 2, name: 'Web design in South & West Wales', item: `${SITE}/web-design` },
   ] },
   { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Towns QuantWeb builds websites for', numberOfItems: towns.length, itemListElement: towns.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/web-design/${t.slug}`, name: `Web design ${t.name}, ${t.county}` })) },
-  { '@context': 'https://schema.org', '@type': 'Service', name: 'Web design and local SEO in South & West Wales', provider: { '@id': `${SITE}/#business` }, areaServed: countyList.map((c) => ({ '@type': 'AdministrativeArea', name: c.name })), offers: { '@type': 'Offer', priceCurrency: 'GBP', price: '350' } },
+  { '@context': 'https://schema.org', '@type': 'Service', name: 'Web design and local SEO in South & West Wales', provider: { '@id': `${SITE}/#business` }, areaServed: countyList.map((c) => ({ '@type': 'AdministrativeArea', name: c.name })), offers: { '@type': 'Offer', priceCurrency: 'GBP', price: '550' } },
 ]
 
 export default function AreasPage() {
   return (
-    <div className="qwhome">
+    <div className="qp">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <SiteNav />
       <main id="top">
@@ -34,7 +34,7 @@ export default function AreasPage() {
             <div className="eyebrow" style={{ marginTop: 18 }}>Web design &amp; local SEO</div>
             <h1>Web design across<br /><span className="blue">South &amp; West Wales.</span></h1>
             <p>
-              QuantWeb is a web design studio founded in Pembrokeshire by {business.owner}. We build fast, hand-coded websites with local SEO
+              QuantWeb is a web design studio founded in South Wales by {business.owner}. We build fast, hand-coded websites with local SEO
               built in for businesses in {towns.length} towns across {countyList.length} counties of South and West Wales — from {business.priceFrom}, with no monthly retainers.
             </p>
             <div className="actions" style={{ marginTop: 22 }}>

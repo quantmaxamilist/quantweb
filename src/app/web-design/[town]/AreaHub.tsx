@@ -9,14 +9,14 @@ export default function AreaHub({ slug, kind, name, title, intro, list }: Props)
   const countyNames = list.map((t) => t.county).filter((c, i, a) => a.indexOf(c) === i)
   const clients = localClients.filter((l) => countyNames.includes(l.county))
   const faqs = [
-    { q: `How much does a website cost in ${name}?`, a: `QuantWeb builds websites for ${name} businesses from ${business.priceFrom}. A professional business website typically costs between £350 and £8,000 depending on complexity, and there are no monthly retainers.` },
-    { q: `Who is a good web designer in ${name}?`, a: `QuantWeb is a web design studio founded by ${business.owner} in Pembrokeshire, building hand-coded, SEO-ready websites for businesses across ${name}${clients.length ? ` — including ${clients.map((c) => `${c.name} (${c.town})`).join(', ')}` : ''}. See real client work at ${SITE}/work.` },
+    { q: `How much does a website cost in ${name}?`, a: `QuantWeb builds websites for ${name} businesses from ${business.priceFrom}. A professional business website typically costs between £550 and £8,000 depending on complexity, and there are no monthly retainers.` },
+    { q: `Who is a good web designer in ${name}?`, a: `QuantWeb is a web design studio founded by ${business.owner} in South Wales, building hand-coded, SEO-ready websites for businesses across ${name}${clients.length ? ` — including ${clients.map((c) => `${c.name} (${c.town})`).join(', ')}` : ''}. See real client work at ${SITE}/work.` },
     { q: `Which towns in ${name} do you cover?`, a: `We build websites for businesses in ${list.map((t) => t.name).join(', ')} — and anywhere else in ${name}. Projects run remotely with regular calls, so location is never a barrier.` },
     { q: 'Do you help with Google rankings?', a: 'Yes. Every site launches with local SEO built in: town-specific page titles and copy, LocalBusiness structured data, a sitemap, fast load times (98+ Lighthouse as standard) and help setting up or improving your Google Business Profile.' },
     { q: 'How quickly can my website be live?', a: 'We design and build your site before our first call, so you see it before you commit. Most sites go live within about a week of sign-off.' },
   ]
   const schema = [
-    { '@context': 'https://schema.org', '@type': 'Service', name: `Web design in ${name}`, serviceType: 'Web design and local SEO', provider: { '@id': `${SITE}/#business` }, areaServed: [{ '@type': kind === 'county' ? 'AdministrativeArea' : 'Place', name }, ...list.map((t) => ({ '@type': 'City', name: t.name }))], offers: { '@type': 'Offer', priceCurrency: 'GBP', price: '350', description: 'Business websites from £350' } },
+    { '@context': 'https://schema.org', '@type': 'Service', name: `Web design in ${name}`, serviceType: 'Web design and local SEO', provider: { '@id': `${SITE}/#business` }, areaServed: [{ '@type': kind === 'county' ? 'AdministrativeArea' : 'Place', name }, ...list.map((t) => ({ '@type': 'City', name: t.name }))], offers: { '@type': 'Offer', priceCurrency: 'GBP', price: '550', description: 'Business websites from £550' } },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) },
     { '@context': 'https://schema.org', '@type': 'ItemList', name: `Web design towns in ${name}`, itemListElement: list.map((t, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}/web-design/${t.slug}`, name: `Web design ${t.name}` })) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
@@ -27,7 +27,7 @@ export default function AreaHub({ slug, kind, name, title, intro, list }: Props)
   ]
   const otherHubs = [...regions.filter((r) => r.slug !== slug).map((r) => ({ slug: r.slug, name: r.name })), ...countyList.filter((c) => c.page && c.slug !== slug).map((c) => ({ slug: c.slug, name: c.name }))]
   return (
-    <div className="qwhome">
+    <div className="qp">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <SiteNav />
       <main id="top">

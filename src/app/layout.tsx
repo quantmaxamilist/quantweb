@@ -1,30 +1,11 @@
 import type { Metadata } from 'next'
-import { Fraunces, Hanken_Grotesk, Inter } from 'next/font/google'
+import { Plus_Jakarta_Sans, Figtree } from 'next/font/google'
 import './globals.css'
 import RevealProvider from '@/components/RevealProvider'
 import { SITE, business, towns, counties, services, faqsCore } from '@/data/site'
 
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  weight: ['500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-display',
-  display: 'swap',
-})
-
-const hankenGrotesk = Hanken_Grotesk({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-body',
-  display: 'swap',
-})
+const head = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-head', display: 'swap' })
+const body = Figtree({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-body', display: 'swap' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.quantweb.co.uk'),
@@ -33,9 +14,13 @@ export const metadata: Metadata = {
     template: '%s | QuantWeb Studio',
   },
   description:
-    'QuantWeb — web design and local SEO across South and West Wales. Fast, hand-coded websites from £350 for businesses in Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, Newport and across the UK.',
+    'QuantWeb — web design, apps, software and local SEO across South and West Wales. Fast, hand-coded websites from £550 for businesses in Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, Newport and across the UK.',
   keywords: [
     'web design south west wales',
+    'app development south wales',
+    'software development south wales',
+    'web platform development wales',
+    'bespoke software wales',
     'web design west wales',
     'web designer pembrokeshire',
     'web design pembrokeshire',
@@ -89,7 +74,7 @@ export const metadata: Metadata = {
   },
   other: {
     'geo.region': 'GB-WLS',
-    'geo.placename': 'Pembrokeshire, Wales',
+    'geo.placename': 'South Wales',
   },
 }
 
@@ -105,7 +90,7 @@ const jsonLd = {
       logo: `${SITE}/qw-logo.svg`,
       image: `${SITE}/og-image.jpg`,
       description:
-        'QuantWeb is a web design and local SEO studio founded in Pembrokeshire by Keeron John. It hand-codes fast, SEO-ready websites for small businesses and tradespeople across South and West Wales — Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, the Vale of Glamorgan, the South Wales valleys, Newport and Monmouthshire — and the rest of the UK, from £350 with no monthly retainers.',
+        'QuantWeb is a web design, software and local SEO studio founded in South Wales by Keeron John. It hand-codes fast, SEO-ready websites for small businesses and tradespeople across South and West Wales — Pembrokeshire, Carmarthenshire, Ceredigion, Swansea, Neath Port Talbot, Bridgend, Cardiff, the Vale of Glamorgan, the South Wales valleys, Newport and Monmouthshire — and the rest of the UK, from £550 with no monthly retainers.',
       email: business.email,
       founder: { '@type': 'Person', name: business.owner, jobTitle: 'Web designer & founder' },
       address: { '@type': 'PostalAddress', addressRegion: 'Wales', addressCountry: 'GB' },
@@ -114,9 +99,9 @@ const jsonLd = {
         ...towns.map((t) => ({ '@type': 'City', name: t.name })),
         { '@type': 'Country', name: 'United Kingdom' },
       ],
-      knowsAbout: ['Web design', 'Website development', 'Local SEO', 'Search engine optimisation', 'Google Business Profile', 'Structured data', 'Website performance', 'Astro', 'Next.js'],
+      knowsAbout: ['Web design', 'Website development', 'Web application development', 'App development', 'Bespoke software', 'Local SEO', 'Search engine optimisation', 'Google Business Profile', 'Structured data', 'Website performance', 'Astro', 'Next.js'],
       makesOffer: services.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.name, description: s.d } })),
-      priceRange: 'From £350',
+      priceRange: 'From £550',
       sameAs: [business.instagram],
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
@@ -143,7 +128,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${fraunces.variable} ${hankenGrotesk.variable} ${inter.variable}`}>
+    <html lang="en-GB" className={`${head.variable} ${body.variable}`}>
       <head>
         <script
           type="application/ld+json"

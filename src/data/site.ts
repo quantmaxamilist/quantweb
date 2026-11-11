@@ -8,9 +8,9 @@ export const business = {
   legal: 'Keeron John, trading as QuantWeb (sole trader)',
   email: 'admin@quantweb.co.uk',
   instagram: 'https://www.instagram.com/quantweb.studio/',
-  priceFrom: '£350',
+  priceFrom: '£550',
   region: 'South & West Wales',
-  base: 'Pembrokeshire, West Wales',
+  base: 'South Wales',
 }
 
 // Google Business Profile — TODO: replace with the profile's own share link + "write a review" link.
@@ -26,7 +26,7 @@ export type County = { name: string; slug: string; region: Region; page: boolean
 
 // page: true = gets its own /web-design/<slug> county page (false where the county shares its name with a town page)
 export const countyList: County[] = [
-  { name: 'Pembrokeshire', slug: 'pembrokeshire', region: 'West Wales', page: true, intro: 'Pembrokeshire runs on small, owner-run businesses — trades, holiday lets, hospitality, farms and coastal tourism — and most of their customers find them on a phone. QuantWeb was started by a Pembrokeshire web designer, and many of our first clients are here.' },
+  { name: 'Pembrokeshire', slug: 'pembrokeshire', region: 'West Wales', page: true, intro: 'Pembrokeshire runs on small, owner-run businesses — trades, holiday lets, hospitality, farms and coastal tourism — and most of their customers find them on a phone. A fast, mobile-first website is the difference between being found and being skipped.' },
   { name: 'Carmarthenshire', slug: 'carmarthenshire', region: 'West Wales', page: true, intro: 'From Llanelli and Carmarthen to the Amman and Tywi valleys, Carmarthenshire businesses compete on reputation and word of mouth. A fast website with clear service pages turns that reputation into enquiries from Google.' },
   { name: 'Ceredigion', slug: 'ceredigion', region: 'West Wales', page: true, intro: 'Ceredigion’s coastal and market towns depend on visitors and loyal local customers alike. We build sites that work on patchy rural mobile signal and show up when people search for what you do in Cardigan Bay.' },
   { name: 'Swansea', slug: 'swansea', region: 'West Wales', page: false, intro: 'Swansea is Wales’ second city, with a busy mix of trades, retail, hospitality and professional services — a competitive search market where speed and local SEO make the difference.' },
@@ -134,12 +134,9 @@ export const regions = [
 ]
 
 // Real QuantWeb clients in South West Wales (town = where the business is based)
+// Only businesses whose QuantWeb site is LIVE on their own domain.
 export const localClients: { name: string; sector: string; town: string; county: string }[] = [
-  { name: 'J.L. Hughes Carpentry', sector: 'Carpentry', town: 'Haverfordwest', county: 'Pembrokeshire' },
-  { name: 'O.J. Carpentry', sector: 'Carpentry', town: 'Narberth', county: 'Pembrokeshire' },
   { name: 'Jaggerz Takeaway', sector: 'Food & takeaway', town: 'Narberth', county: 'Pembrokeshire' },
-  { name: 'Rock Solid Construction and Carpentry', sector: 'Construction & garden rooms', town: 'Carmarthenshire', county: 'Carmarthenshire' },
-  { name: 'Nigel Thomas Carpentry & Kitchens', sector: 'Carpentry & kitchens', town: 'Port Talbot', county: 'Neath Port Talbot' },
 ]
 
 const R = 3958.8
@@ -153,6 +150,7 @@ export const nearby = (t: Town, n = 5) => towns.filter((x) => x.slug !== t.slug)
 
 export const services = [
   { name: 'Web design & development', d: 'Hand-coded, mobile-first websites built to convert — never a template or page builder.' },
+  { name: 'Web platforms, apps & software', d: 'Custom web platforms, apps and bespoke software — client portals, dashboards, booking systems and internal tools built around how your business works.' },
   { name: 'Local SEO', d: 'Page titles, schema, Google Business Profile help and town pages so local customers find you.' },
   { name: 'Ongoing support', d: 'Changes, updates and hosting when you need them — no monthly retainers.' },
   { name: 'Website audits', d: 'A clear look at what is holding your current site back, and how to fix it.' },
@@ -161,7 +159,7 @@ export const services = [
 export const faqsCore = [
   {
     q: 'How much does a website cost?',
-    a: 'A professional business website typically costs between £350 and £8,000 depending on complexity. At QuantWeb, pricing starts from £350 for a clean, fast, fully optimised site — with no monthly retainers.',
+    a: 'A professional business website typically costs between £550 and £8,000 depending on complexity. At QuantWeb, pricing starts from £550 for a clean, fast, fully optimised site — with no monthly retainers.',
   },
   {
     q: 'How long does SEO take to work?',
@@ -169,7 +167,7 @@ export const faqsCore = [
   },
   {
     q: 'Who runs QuantWeb?',
-    a: 'QuantWeb is run by Keeron John, a web designer from Pembrokeshire. You deal directly with the person designing and building your site.',
+    a: 'QuantWeb is run by Keeron John, a web designer from South Wales. You deal directly with the person designing and building your site.',
   },
   {
     q: 'Which areas of Wales do you cover?',
