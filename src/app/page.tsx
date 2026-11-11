@@ -2,6 +2,7 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import QuoteForm from '@/components/QuoteForm'
 import HomeScripts from '@/components/HomeScripts'
+import Showcase from '@/components/Showcase'
 
 export default function Home() {
   return (
@@ -52,11 +53,7 @@ export default function Home() {
         <h2 className="h2c reveal">What we do to get you results.</h2>
         <div className="bento">
           <a className="frame tall reveal" href="/work"><div className="inner svc">
-            <div className="vis collage">
-              <div className="col"><img src="/work/jaggerz-mobile.jpg" alt="" /><img src="/work-asteria.jpg" alt="" /></div>
-              <div className="col"><img src="/work-rs1.jpg" alt="" /><img src="/work-voyager.jpg" alt="" /><img src="/work-jaggerz.jpg" alt="" /></div>
-              <div className="col"><img src="/work-dreamhome.jpg" alt="" /><img src="/work-vector.jpg" alt="" /></div>
-            </div>
+            <div className="vis"><Showcase /></div>
             <div className="cap"><div><h3>Web design &amp; development</h3><p>Hand-coded, mobile-first websites built to convert — never a template or page builder.</p></div><span className="more">View</span></div>
           </div></a>
           <a className="frame reveal" href="/web-design"><div className="inner svc">
