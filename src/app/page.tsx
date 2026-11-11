@@ -15,7 +15,7 @@ export default function Home() {
           <path d="M60 110 C220 110 260 300 310 300" /><path d="M40 250 C200 250 240 330 310 330" /><path d="M60 420 C200 420 250 360 310 360" /><path d="M90 560 C230 560 260 390 310 390" />
           <path d="M1120 110 C960 110 920 300 870 300" /><path d="M1140 250 C980 250 940 330 870 330" /><path d="M1120 420 C980 420 930 360 870 360" /><path d="M1090 560 C950 560 920 390 870 390" />
         </svg>
-        <div className="trust"><span>Trusted by</span><div className="avs"><span style={{background: '#0a1230'}}>RS</span><span style={{background: '#b88a2f'}}>SC</span><span style={{background: '#2f8a4e'}}>BF</span><span style={{background: '#0066ff'}}>EH</span><span style={{background: '#d9542b'}}>JZ</span></div><span>25+ businesses across the UK</span></div>
+        <div className="trust"><span>Trusted by</span><div className="avs"><span style={{background: '#5f6b3a'}}>AS</span><span style={{background: '#111111'}}>VC</span><span style={{background: '#b98f00'}}>DH</span><span style={{background: '#13294b'}}>VS</span><span style={{background: '#0066ff'}}>RS</span></div><span>25+ businesses across the UK</span></div>
         <div className="stem"></div>
         <div className="hbox reveal">
           <h1>Websites that <b>actually perform.</b></h1>
@@ -43,8 +43,8 @@ export default function Home() {
       
       {/* LOGOS */}
       <div className="logos"><div className="mq"><div className="tr">
-        <span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span><span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span>
-        <span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span><span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span>
+        <span className="wm"><i>A</i>Asteria</span><span className="wm"><i>V</i>Voyager</span><span className="wm"><i>D</i>Dream Home Mortgages</span><span className="wm"><i>V</i>Vector Specialist</span><span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span>
+        <span className="wm"><i>A</i>Asteria</span><span className="wm"><i>V</i>Voyager</span><span className="wm"><i>D</i>Dream Home Mortgages</span><span className="wm"><i>V</i>Vector Specialist</span><span className="wm"><i>R</i>RS1 Capital</span><span className="wm"><i>S</i>Scarlatt</span><span className="wm"><i>B</i>Boxed Fresh</span><span className="wm"><i>E</i>EcoHeat</span><span className="wm"><i>J</i>Jaggerz</span>
       </div></div></div>
       
       {/* SERVICES */}
@@ -53,9 +53,9 @@ export default function Home() {
         <div className="bento">
           <a className="frame tall reveal" href="/work"><div className="inner svc">
             <div className="vis collage">
-              <div className="col"><img src="/work/jaggerz-mobile.jpg" alt="" /><img src="/work-ecoheat.jpg" alt="" /></div>
-              <div className="col"><img src="/work-rs1.jpg" alt="" /><img src="/work-boxedfresh.jpg" alt="" /><img src="/work-jaggerz.jpg" alt="" /></div>
-              <div className="col"><img src="/work-scarlatt.jpg" alt="" /><img src="/work/jaggerz-desktop.jpg" alt="" /></div>
+              <div className="col"><img src="/work/jaggerz-mobile.jpg" alt="" /><img src="/work-asteria.jpg" alt="" /></div>
+              <div className="col"><img src="/work-rs1.jpg" alt="" /><img src="/work-voyager.jpg" alt="" /><img src="/work-jaggerz.jpg" alt="" /></div>
+              <div className="col"><img src="/work-dreamhome.jpg" alt="" /><img src="/work-vector.jpg" alt="" /></div>
             </div>
             <div className="cap"><div><h3>Web design &amp; development</h3><p>Hand-coded, mobile-first websites built to convert — never a template or page builder.</p></div><span className="more">View</span></div>
           </div></a>
@@ -85,9 +85,11 @@ export default function Home() {
       <section id="work"><div className="wrap">
         <h2 className="h2c reveal">Real sites for real businesses.</h2>
         <div className="cases">
+          <article className="case frame"><div className="inner"><div><span className="pill">Wedding platform</span><h3>Launching Asteria, a new way to plan a wedding</h3><div className="sub">Wedding planning platform · UK</div><p>A calm, editorial site with an interactive wedding builder and clickable previews of both the couple and supplier apps.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-asteria.jpg" alt="Asteria website" loading="lazy" /></div></div></article>
+          <article className="case frame"><div className="inner"><div><span className="pill">Automotive</span><h3>A full rebrand for Voyager Camper Conversions</h3><div className="sub">Bespoke camper vans · Wrexham, North Wales</div><p>Black-and-white rebrand, a cinematic hero of their own van and a stock page where every van gets its own detail page.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-voyager.jpg" alt="Voyager Camper Conversions website" loading="lazy" /></div></div></article>
+          <article className="case frame"><div className="inner"><div><span className="pill">Mortgages &amp; finance</span><h3>A bold, compliant site for Dream Home Mortgages</h3><div className="sub">Fee-free mortgage broker · Wakefield</div><p>Gold-and-black design, a clear who-we-help section and full FCA regulatory text — live on their own domain.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-dreamhome.jpg" alt="Dream Home Mortgages website" loading="lazy" /></div></div></article>
+          <article className="case frame"><div className="inner"><div><span className="pill">Removals &amp; logistics</span><h3>Repositioning Vector Specialist for homes and businesses</h3><div className="sub">Removals, transport &amp; installation · London</div><p>Rebuilt around reliable removals, transport and installation, with clear service pages and quote buttons everywhere.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-vector.jpg" alt="Vector Specialist website" loading="lazy" /></div></div></article>
           <article className="case frame"><div className="inner"><div><span className="pill">Finance &amp; investment</span><h3>Giving RS1 Capital the gravitas of a major institution</h3><div className="sub">Investment, lending &amp; advisory · London / Spain</div><p>A refined black-and-gold, multi-page build with an Acquisitions offering, FAQ and full structured data — migrated with zero email downtime.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-rs1.jpg" alt="RS1 Capital website" /></div></div></article>
-          <article className="case frame"><div className="inner"><div><span className="pill">Property &amp; renovation</span><h3>Showing Scarlatt Property&apos;s work at its best</h3><div className="sub">Renovations &amp; extensions · Cheshire</div><p>A bold editorial build with per-project case pages, photo carousels tuned for mobile and Cheshire-targeted SEO.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-scarlatt.jpg" alt="Scarlatt Property website" /></div></div></article>
-          <article className="case frame"><div className="inner"><div><span className="pill">Food &amp; e-commerce</span><h3>A menu with real macros for The Boxed Fresh Meals Co.</h3><div className="sub">Chef-prepared meal prep · West Yorkshire</div><p>Studio-cut food photography and an interactive menu where every dish opens real kcal and macro data.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-boxedfresh.jpg" alt="Boxed Fresh website" /></div></div></article>
           <article className="case frame"><div className="inner"><div><span className="pill">Local takeaway</span><h3>Putting Jaggerz on the map in Narberth</h3><div className="sub">Fresh food &amp; coffee · Narberth, Pembrokeshire</div><p>A warm one-page site with the real menu, opening hours, Google reviews and click-to-call — built to rank for &quot;takeaway Narberth&quot;.</p><a className="more" href="/work">View case study</a></div><div className="img"><img src="/work-jaggerz.jpg" alt="Jaggerz website" /></div></div></article>
         </div>
         <a className="btn p bar" href="/work">Browse all our work</a>
@@ -147,7 +149,7 @@ export default function Home() {
             <div className="frame reveal"><div className="inner"><h3>See it before you commit</h3><p>We design your site before our first call.</p><div className="knob">✓</div></div></div>
             <div className="frame reveal"><div className="inner"><h3>Pricing without surprises</h3><p>What you see is what you pay.</p><div className="price"><b>£550</b><i></i></div></div></div>
           </div>
-          <div className="frame reveal"><div className="inner"><h3>One person, start to finish</h3><p>You deal directly with Keeron — the person designing and building your site.</p><div className="avrow"><span style={{background: '#0a1230'}}>RS</span><span style={{background: '#b88a2f'}}>SC</span><span style={{background: '#2f8a4e'}}>BF</span><span style={{background: '#0066ff'}}>EH</span><span style={{background: '#d9542b'}}>JZ</span><em>25+</em></div><a className="btn p cta" href="#contact">Be one of them</a></div></div>
+          <div className="frame reveal"><div className="inner"><h3>One person, start to finish</h3><p>You deal directly with Keeron — the person designing and building your site.</p><div className="avrow"><span style={{background: '#5f6b3a'}}>AS</span><span style={{background: '#111111'}}>VC</span><span style={{background: '#b98f00'}}>DH</span><span style={{background: '#13294b'}}>VS</span><span style={{background: '#0066ff'}}>RS</span><em>25+</em></div><a className="btn p cta" href="#contact">Be one of them</a></div></div>
         </div>
       </div></section>
       

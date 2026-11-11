@@ -12,6 +12,10 @@ export const metadata: Metadata = {
 }
 
 const sectors: Record<string, string> = {
+  asteria: 'Wedding platform',
+  voyager: 'Automotive',
+  dreamhome: 'Mortgages & finance',
+  vector: 'Removals & logistics',
   rs1: 'Finance & investment',
   scarlatt: 'Property & renovation',
   'boxed-fresh': 'Food & e-commerce',
@@ -20,6 +24,10 @@ const sectors: Record<string, string> = {
 }
 
 const shots: Record<string, string> = {
+  asteria: '/work-asteria.jpg',
+  voyager: '/work-voyager.jpg',
+  dreamhome: '/work-dreamhome.jpg',
+  vector: '/work-vector.jpg',
   rs1: '/work-rs1.jpg',
   scarlatt: '/work-scarlatt.jpg',
   'boxed-fresh': '/work-boxedfresh.jpg',
@@ -49,12 +57,12 @@ export default function WorkPage() {
                   <div className="inner">
                     <div>
                       <span className="pill">{sectors[cs.id] ?? cs.subtitle}</span>
-                      <h3>{cs.title} {cs.accentWord}</h3>
+                      <h3>{cs.title}{cs.accentWord ? ` ${cs.accentWord}` : ''}</h3>
                       <div className="sub">{cs.subtitle}</div>
                       <div className="blk"><b>The challenge</b><p>{cs.challenge}</p></div>
                       <div className="blk"><b>What we did</b><p>{cs.solution}</p></div>
                       <div className="chips">{cs.services.map((s) => <span key={s}>{s}</span>)}</div>
-                      <a className="btn p" href={cs.url} target="_blank" rel="noopener noreferrer">Visit {cs.domain} ↗</a>
+                      <a className="btn p" href={cs.url} target="_blank" rel="noopener noreferrer">Visit live site ↗</a>
                     </div>
                     <div className="img"><img src={shots[cs.id]} alt={`${cs.title} ${cs.accentWord ?? ''} website`.trim()} loading="lazy" /></div>
                   </div>

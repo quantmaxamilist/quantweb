@@ -16,6 +16,57 @@ export type CaseStudyData = {
 
 export const caseStudies: CaseStudyData[] = [
   {
+    id: 'asteria',
+    title: 'Asteria',
+    subtitle: 'Wedding planning platform · UK',
+    url: 'https://asteria-events.com',
+    domain: 'asteria-events.com',
+    challenge:
+      'A new wedding-planning start-up needed a launch website and clickable previews of its "build your wedding" platform to test with couples and suppliers before the full build.',
+    solution:
+      'A calm, editorial site on its own domain with an olive-and-ivory brand, an interactive wedding builder, show-only previews of both the couple app and the supplier app, and early-access sign-up forms.',
+    services: ['Brand & Website', 'Interactive Builder', 'Couple & Supplier Previews', 'Early-access Forms', 'Next.js'],
+  },
+  {
+    id: 'voyager',
+    title: 'Voyager',
+    accentWord: 'Camper Conversions',
+    subtitle: 'Bespoke camper vans · Wrexham, North Wales',
+    url: 'https://voyagercamperconversions.com',
+    domain: 'voyagercamperconversions.com',
+    challenge:
+      'A camper conversion specialist was stuck with a dated red site, an old stock photo and stock lists that were out of date.',
+    solution:
+      'A full black-and-white rebrand with a cinematic hero of their own van, a stock page where every van gets its own detail page and gallery, plus pages for conversions, hire and finance.',
+    services: ['Rebrand', 'Stock Listings', 'Vehicle Detail Pages', 'Hire & Finance Pages', 'Local SEO'],
+  },
+  {
+    id: 'dreamhome',
+    title: 'Dream Home',
+    accentWord: 'Mortgages',
+    subtitle: 'Fee-free mortgage broker · Wakefield',
+    url: 'https://dreamhomemortgages.co.uk',
+    domain: 'dreamhomemortgages.co.uk',
+    challenge:
+      'A fee-free mortgage broker needed a bold, trustworthy site that explains who they help — with every FCA disclaimer in the right place.',
+    solution:
+      'A bold gold-and-black build with a who-we-help section for first-time buyers, the self-employed and landlords, a clear three-step process, full FCA regulatory text and a working contact form — live on their own domain.',
+    services: ['Bold Brand Design', 'Multi-page Build', 'FCA Compliance', 'Web3Forms', 'Local SEO'],
+  },
+  {
+    id: 'vector',
+    title: 'Vector',
+    accentWord: 'Specialist',
+    subtitle: 'Removals, transport & installation · London',
+    url: 'https://vectorspecialist.co.uk',
+    domain: 'vectorspecialist.co.uk',
+    challenge:
+      'A London removals and installation company needed to come across as approachable and reliable — not like an industrial logistics firm.',
+    solution:
+      'A clean multi-page site rebuilt around reliable removals, transport and installation for homes and businesses, with clear service pages, a packing-materials price list and quote buttons on every page.',
+    services: ['Copy Repositioning', 'Service Pages', 'Price List', 'Quote CTAs', 'Mobile-first'],
+  },
+  {
     id: 'rs1',
     title: 'RS1',
     accentWord: 'Capital',
